@@ -6,6 +6,7 @@
   --light-blue: #cdd9e4;
   --light-green: #c5e3d8;
   --light-pink: #f0dee5;
+  --light-yellow: #fae1b3;
   --fbp: freight-big-pro, serif;
   --qua: quasimoda, sans-serif;
   --ernie: adobe-handwriting-ernie, sans-serif;
@@ -41,11 +42,6 @@ a {
   color: black;
 }
 
-img {
-  width: 100%;
-  height: 311px;
-}
-
 /* HEADER
 ------------------------- */
 header {
@@ -59,16 +55,120 @@ header {
   width: 100%;
 }
 
+nav {
+  background: var(--light-pink);
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  border-radius: 0 0 50% 50%;
+  top: -100%;
+  position: absolute;
+  transition: top 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav.active {
+  top: 0;
+}
+
+nav li {
+  font: 6rem var(--fbp);
+  text-transform: uppercase;
+  padding: 5px;
+  margin-bottom: 30px;
+}
+
+nav span {
+  width: 50px;
+  height: 4px;
+  background: black;
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  position: absolute;
+  right: 4%;
+  top: 4%;
+}
+
+nav span:first-child {
+  transform: rotate(45deg);
+}
+
+nav span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
 /* FOOTER
 ------------------------- */
 footer {
   background: var(--light-pink);
   height: 530px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 footer a {
+  font: 2rem var(--qua);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+footer img {
+  width: 130px;
+}
+
+.footer-links {
+  margin-bottom: 60px;
+}
+
+.footer-adress {
+  margin-bottom: 30px;
+}
+
+/* HOME
+------------------------- */
+.lop-black {
+  background: var(--almost-black);
+  width: 292px;
+}
+
+.lop-img {
+  background: url(/images/manki-kim-ZOeyUJB6t_Y-unsplash-downsized.jpg)
+    right/cover no-repeat;
+  height: 495px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lop-black p {
+  color: var(--almost-white);
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 21px 20px;
+}
+
+.lop-blue {
+  background: var(--light-blue);
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lop-blue p {
+  font: 2rem var(--fbp);
+  margin-bottom: 10px;
+}
+
+.lop-blue a {
   font: 2rem var(--qua);
   text-transform: uppercase;
 }
@@ -77,4 +177,94 @@ footer a {
 ------------------------- */
 .about {
   background: var(--light-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about img {
+  width: 280px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.about p {
+  margin: 0 16px;
+}
+
+/* CONTACT
+------------------------- */
+.contact {
+  background: var(--light-yellow);
+}
+
+.message-sent {
+  background: var(--light-pink);
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  border-radius: 0 0 50% 50%;
+  /* top: -100%; */
+  /* position: absolute; */
+  transition: top 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-sent.active {
+  top: 0;
+}
+
+.message-sent img {
+  width: 162px;
+  margin-top: 55px;
+  margin-bottom: 40px;
+}
+
+.message-sent p {
+  margin: 0 16px 85px;
+}
+
+.message-sent a {
+  font: 2rem var(--qua);
+  text-transform: uppercase;
+}
+
+.form-container {
+  font: 1.8rem var(--qua);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  width: 90%;
+  font-size: 20px;
+}
+
+input,
+textarea {
+  background: var(--light-yellow);
+  border: 1px solid var(--almost-black);
+}
+
+input:focus,
+textarea:focus {
+  outline: 0.5px dotted black;
+  outline-offset: 2px;
+}
+
+button {
+  color: var(--light-yellow);
+  font: 1.8rem var(--qua);
+  text-transform: uppercase;
+  background-color: var(--almost-black);
+}
+
+.form-error {
+  display: none;
 }

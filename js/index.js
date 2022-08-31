@@ -14,8 +14,8 @@ async function getBlogPosts(url) {
     loader.style.display = "none";
     blogGrid.innerHTML += `
     <div class="post-card">
-        <div class="post-card-background">
-            <h4>${posts.title.rendered}</h4>
+        <div class="posts-card-background">
+            <h2>${posts.title.rendered}</h2>
             <img src="" alt=""/>
         </div>
     </div>

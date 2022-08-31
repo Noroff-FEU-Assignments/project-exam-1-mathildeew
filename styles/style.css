@@ -24,23 +24,14 @@ html {
 }
 
 h1 {
-  font: 3rem var(--fbp);
-}
-
-h2 {
   font: 6rem var(--fbp);
   text-transform: uppercase;
   text-align: center;
-  padding: 50px 0 30px 0;
+  padding: 30px 0;
 }
 
-h3 {
-  text-transform: uppercase;
-}
-
-h3,
-h4 {
-  font: var(--fbp);
+h2 {
+  font: 2rem var(--fbp);
 }
 
 p {
@@ -60,22 +51,51 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   height: 52px;
   width: 100%;
-  position: fixed;
+  position: sticky;
   z-index: 2;
+}
+
+header a {
+  font: 3rem var(--fbp);
+  padding-left: 20px;
+}
+
+.menu-button {
+  padding: 3px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.menu-button span {
+  width: 25px;
+  height: 2px;
+  background: black;
+  display: block;
+  margin-bottom: 6px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.menu-button.active span:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.menu-button.active span:nth-child(2) {
+  transform: translateY(-5px) rotate(-45deg);
 }
 
 nav {
   background: var(--light-pink);
   text-align: center;
-  height: 100vh;
+  height: 117vh;
   width: 100%;
-  border-radius: 0 0 50% 50%;
-  top: -100%;
+  border-radius: 0 0 100% 100% / 0 0 50% 50%;
+  top: -117vh;
   position: absolute;
-  transition: top 0.5s ease-in-out;
+  transition: top 0.6s ease-in-out;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -94,31 +114,11 @@ nav li {
   margin-bottom: 20px;
 }
 
-.menu-button {
-  padding: 3px;
-}
-
-.menu-button span {
-  width: 30px;
-  height: 2px;
-  background: black;
-  display: block;
-  margin-bottom: 5px;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 1, 1);
-}
-
-.menu-button.active span:first-child {
-  transform: translateY(7px) rotate(-45deg);
-}
-
-.menu-button.active span:nth-child(2) {
-  transform: rotate(45deg);
-}
-
 .loader {
   background: url(/images/loader.png) center/cover no-repeat;
   width: 100px;
   height: 100px;
+  margin: 0 auto;
   animation: spin 3s linear infinite;
 }
 
@@ -173,30 +173,31 @@ ul {
 .latest-posts {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 0 16px;
+  margin-bottom: 50px;
 }
 
-.post-card {
-  margin-bottom: 20px;
+.latest-posts h1 {
+  font-size: 3rem;
+  text-align: left;
 }
 
-.post-card-background {
+.posts-card-background {
   background: var(--light-green);
 }
 
 .lop-black {
   background: var(--almost-black);
-  width: 292px;
+  margin: 0 16px 30px;
 }
 
 .lop-img {
   background: url(/images/manki-kim-ZOeyUJB6t_Y-unsplash-downsized.jpg)
     right/cover no-repeat;
-  height: 495px;
+  height: 280px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
 }
 
 .lop-black p {
@@ -204,26 +205,57 @@ ul {
   font-size: 1.6rem;
   font-weight: 400;
   text-transform: uppercase;
-  margin: 21px 20px;
+  margin: 20px 16px;
 }
 
 .lop-blue {
   background: var(--light-blue);
-  height: 220px;
+  height: 150px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
 .lop-blue p {
-  font: 2rem var(--fbp);
-  margin-bottom: 10px;
+  font: 1.6rem var(--fbp);
+  margin: 0 10px 16px;
 }
 
 .lop-blue a {
   font: 2rem var(--qua);
   text-transform: uppercase;
+  margin: 0 10px;
+}
+
+/* BLOG
+------------------------- */
+.blog {
+  background: var(--almost-white);
+}
+
+.blog-intro,
+.blog-grid2,
+.blog span {
+  width: 100%;
+  margin: 0 16px;
+}
+
+.blog span {
+  text-align: center;
+  width: 100%;
+}
+
+/* BLOG POST
+------------------------- */
+.blogpost {
+  background: var(--light-green);
+}
+.blogpost h1 {
+  font-size: 3rem;
+}
+
+h4 {
 }
 
 /* ABOUT
@@ -236,13 +268,15 @@ ul {
 }
 
 .about img {
-  width: 280px;
+  max-width: 288px;
   height: 250px;
   object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .about p {
   margin: 0 16px;
+  margin-bottom: 10px;
 }
 
 /* CONTACT
@@ -252,8 +286,7 @@ ul {
 }
 
 .contact-content {
-  width: 90%;
-  margin: 0 auto;
+  margin: 0 16px;
 }
 
 .contact-info1,
@@ -347,6 +380,7 @@ button {
   padding: 8px 60px;
   margin: 10px auto;
   display: block;
+  border: none;
 }
 
 .form-error {

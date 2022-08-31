@@ -1,6 +1,7 @@
 import { errorMessage } from "./ui/errorMessage.js";
 
-const baseUrl = "https://projects.mathildeelinor.no/wp-json/wp/v2/posts?_embed";
+const baseUrl =
+  "https://projects.mathildeelinor.no/wp-json/wp/v2/posts?per_page=100&_embed";
 
 const loader = document.querySelector(".loader");
 const blogGrid = document.querySelector(".blog-grid2");
@@ -20,14 +21,14 @@ async function getBlogPosts(url) {
     loader.style.display = "none";
     blogGrid.innerHTML += `
     <div class="posts">
-    <a href="blogpost.html?id=${posts.id}">
-     <div class="post-card" style="background-image: url('${posts._embedded["wp:featuredmedia"]["0"].source_url}')">
-      <div class="posts-card-background">
-        <h2>${posts.title.rendered}</h2>
-        <h3>${date}</h3>
-      </div>
-    </div>
-    </a>
+      <a href="blogpost.html?id=${posts.id}">
+        <div class="post-card" style="background-image: url('${posts._embedded["wp:featuredmedia"]["0"].source_url}')">
+          <div class="posts-card-background">
+            <h2>${posts.title.rendered}</h2>
+            <h3>${date}</h3>
+          </div>
+        </div>
+      </a>
     </div>
     `;
   });

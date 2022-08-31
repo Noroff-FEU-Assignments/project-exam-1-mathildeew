@@ -59,10 +59,10 @@ function sendForm(event) {
     checkLength(subject.value, 14) === true &&
     checkLength(message.value, 24)
   ) {
-    sentMessage.classList.toggle("active");
+    window.scrollTo(0, 0);
+    body.style.overflow = "hidden";
     form.style.display = "none";
+    sentMessage.classList.toggle("active");
     // form.reset();
   }
 }
-
-// hei dette er 25 karaktere

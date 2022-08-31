@@ -28,88 +28,92 @@
       </ul>
     </nav>
 
+    <section class="message-sent">
+      <img src="images/cerchio-logo.png" alt="Cerchio logo" />
+      <p>Thank you. We will be in touch with you shortly.</p>
+      <a href="index.html">Home</a>
+    </section>
+
     <main class="contact">
-      <h2>Contact</h2>
+      <div class="contact-content">
+        <h2>Contact</h2>
 
-      <section class="contact-info"></section>
-      <p>Cerchio Studio</p>
-      <p>5th floor, Debussy apt.</p>
-      <p>Avenue River 277</p>
-      <p>Italy</p>
-      <p>cerchio@studio.com</p>
-      <p>+43 78451 48985</p>
+        <section class="contact-info">
+          <div class="contact-info1">
+            <p>Cerchio Studio</p>
+            <p>5th floor, Debussy apt.</p>
+            <p>Avenue River 277</p>
+            <p>Italy</p>
+          </div>
+          <div class="contact-info2">
+            <p>+43 78451 48985</p>
+            <p>cerchio@studio.com</p>
+          </div>
+        </section>
 
-      <section class="message-sent">
-        <img src="images/cerchio-logo.png" alt="Cerchio logo" />
-        <p>Thank you. We will be in touch with you shortly.</p>
-        <a href="index.html">Home</a>
-      </section>
-
-      <section class="form-container">
-        <form id="contact-form">
-          <div>
-            <label>
-              Name <em>*</em>
+        <section class="form-container">
+          <form id="contact-form">
+            <div>
+              <label> Name <em>*</em></label>
               <input name="name" id="name" />
-            </label>
-            <div class="form-error" id="nameError">Please enter your name</div>
-          </div>
+              <div class="form-error" id="nameError">
+                Please enter your name
+              </div>
+            </div>
 
-          <div>
-            <label>
-              Email <em>*</em>
+            <div>
+              <label> Email <em>*</em></label>
               <input name="email" id="email" />
-            </label>
-            <div class="form-error" id="emailError">
-              Please enter a valid email address
-            </div>
-          </div>
 
-          <div>
-            <label>
-              Subject <em>*</em>
+              <div class="form-error" id="emailError">
+                Please enter a valid email address
+              </div>
+            </div>
+
+            <div>
+              <label> Subject <em>*</em></label>
               <input name="subject" id="subject" />
-            </label>
-            <div class="form-error" id="subject-error">
-              Please enter a subject with 15 characters
+              <div class="form-error" id="subject-error">
+                Please enter a subject with 15 characters
+              </div>
             </div>
-          </div>
 
-          <div>
-            <label>
-              Message <em>*</em>
+            <div>
+              <label for=""> Message <em>*</em></label>
               <textarea name="message" id="message"></textarea>
-            </label>
-            <div class="form-error" id="message-error">
-              Please enter a message with at least 10 characters
+              <div class="form-error" id="message-error">
+                Please enter a message with at least 10 characters
+              </div>
             </div>
-          </div>
 
-          <button>Submit</button>
-        </form>
-      </section>
+            <button>Submit</button>
+          </form>
+        </section>
+      </div>
     </main>
 
     <footer>
-      <div>
-        <ul class="footer-links">
-          <li><a href="about.html">About</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="footer-adress">
-          <p>Cerchio Studio</p>
-          <p>5th floor, Debussy apt.</p>
-          <p>Avenue River 277</p>
-          <p>Italy</p>
+      <div class="footer-content">
+        <div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="footer-adress">
+            <p>Cerchio Studio</p>
+            <p>5th floor, Debussy apt.</p>
+            <p>Avenue River 277</p>
+            <p>Italy</p>
+          </div>
+          <div>
+            <p>cerchio@studio.com</p>
+            <p>+43 78451 48985</p>
+          </div>
         </div>
         <div>
-          <p>cerchio@studio.com</p>
-          <p>+43 78451 48985</p>
+          <img src="images/cerchio-logo.png" alt="Cerchio logo" />
         </div>
-      </div>
-      <div>
-        <img src="images/cerchio-logo.png" alt="Cerchio logo" />
       </div>
     </footer>
     <script src="js/navigation.js"></script>

@@ -14,8 +14,6 @@ export async function getBlog(url) {
     const post = await response.json();
     console.log(post);
 
-    // searchBlog(post);
-
     const date = new Date(post[0].date).toLocaleDateString("utc", {
       year: "numeric",
       month: "long",
@@ -36,7 +34,6 @@ export async function getBlog(url) {
       </a>
     </div>
     `;
-      search.onkeyup = function (event) {};
     });
   } catch (error) {
     console.log(error);

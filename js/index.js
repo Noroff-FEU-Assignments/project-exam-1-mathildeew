@@ -1,7 +1,6 @@
 import { errorMessage } from "./ui/errorMessage.js";
 
 const baseUrl = "https://projects.mathildeelinor.no/wp-json/wp/v2/posts?_embed";
-
 const loader = document.querySelector(".loader");
 const blogGrid = document.querySelector(".blog-grid");
 
@@ -9,14 +8,15 @@ async function getBlogPosts(url) {
   try {
     const response = await fetch(url);
     const posts = await response.json();
-    console.log(posts);
 
+    // Convert wp date to utc format
     const date = new Date(posts[0].date).toLocaleDateString("utc", {
       year: "numeric",
       month: "long",
       day: "2-digit",
     });
 
+    // Display only 4 posts
     for (let i = 0; i < posts.length; i++) {
       loader.style.display = "none";
 

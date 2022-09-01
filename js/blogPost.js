@@ -8,7 +8,7 @@ const id = params.get("id");
 const url =
   "https://projects.mathildeelinor.no/wp-json/wp/v2/posts/" + id + "/?_embed";
 
-async function getPost(url) {
+async function getBlogPost(url) {
   const response = await fetch(url);
   const post = await response.json();
   console.log(post);
@@ -30,4 +30,4 @@ async function getPost(url) {
     `;
 }
 
-getPost(url);
+getBlogPost(url);

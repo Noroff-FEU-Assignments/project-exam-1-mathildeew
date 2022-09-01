@@ -6,14 +6,15 @@ const baseUrl =
 
 const loader = document.querySelector(".loader");
 const blogGrid = document.querySelector(".blog-grid2");
+const search = document.querySelector(".search");
 
 export async function getBlog(url) {
   try {
-    const response = await fetch(url);
+    const response = await fetch(baseUrl);
     const post = await response.json();
     console.log(post);
 
-    searchBlog(post);
+    // searchBlog(post);
 
     const date = new Date(post[0].date).toLocaleDateString("utc", {
       year: "numeric",
@@ -35,11 +36,12 @@ export async function getBlog(url) {
       </a>
     </div>
     `;
+      search.onkeyup = function (event) {};
     });
   } catch (error) {
     console.log(error);
   }
 }
 
-getBlog(baseUrl);
+getBlog();
 /* <img src="${posts._embedded["wp:featuredmedia"]["0"].source_url}"/> */

@@ -9,9 +9,7 @@ export function searchBlog(post) {
     const searchValue = event.target.value.trim().toLowerCase();
 
     const searchedPosts = post.filter(function (post) {
-      if (post.id.toLowerCase().startsWith(searchValue)) {
-        return true;
-      }
+      console.log(searchedPosts);
     });
     getBlog(searchedPosts);
   };

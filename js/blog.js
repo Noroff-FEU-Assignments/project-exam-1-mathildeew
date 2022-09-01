@@ -14,6 +14,8 @@ export async function getBlog(url) {
     const post = await response.json();
     console.log(post);
 
+    searchBlog();
+
     const date = new Date(post[0].date).toLocaleDateString("utc", {
       year: "numeric",
       month: "long",

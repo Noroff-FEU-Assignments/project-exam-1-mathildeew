@@ -1,7 +1,7 @@
 const blogGrid = document.querySelector(".blog-grid2");
 const selectCategories = document.querySelector(".categories");
 const showMore = document.querySelector(".show-more");
-const select = document.querySelector("select");
+const select = document.querySelectorAll("select");
 
 function blog(posts, categories) {
   document.title += " | Blog";
@@ -11,8 +11,16 @@ function blog(posts, categories) {
     selectCategories.innerHTML += `
                             <option>${categories.name}</option>
   `;
+
+    selectCategories.onchange = (event) => {
+      // code to change category
+    };
   });
 
+  // Show more posts
+  showMore.addEventListener("click", event);
+
+  // Display blogposts
   for (let i = 0; i < posts.length; i++) {
     const date = new Date(posts[i].date).toLocaleDateString("utc", {
       year: "numeric",

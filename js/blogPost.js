@@ -1,33 +1,54 @@
-const loader = document.querySelector(".loader");
-const blogPost = document.querySelector(".post");
+const blogPostC = document.querySelector(".blogpost-content");
 
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const id = params.get("id");
+function post(blogPost) {
+  document.title += ` | ${blogPost.title.rendered}`;
 
-const url =
-  "https://projects.mathildeelinor.no/wp-json/wp/v2/posts/" + id + "/?_embed";
-
-async function getBlogPost(url) {
-  const response = await fetch(url);
-  const post = await response.json();
-  console.log(post);
-
-  const date = new Date(post.date).toLocaleDateString("utc", {
+  const date = new Date(blogPost.date).toLocaleDateString("utc", {
     year: "numeric",
     month: "long",
     day: "2-digit",
   });
-  console.log(date);
 
-  loader.style.display = "none";
-  document.title += ` | ${post.title.rendered}`;
-  blogPost.innerHTML += `
-    <h1>${post.title.rendered}</h1>
+  blogPostC.innerHTML += `
+    <h1>${blogPost.title.rendered}</h1>
     <h2>${date}</h2>
-    <div class="blogpost-content">${post.content.rendered}</div>
-    <p class="signature">- ${post._embedded.author[0].name}</p>
+     <div class="blogpost-content">${blogPost.content.rendered}</div>
+    <p class="signature">- ${blogPost._embedded.author[0].name}</p>
     `;
 }
 
-getBlogPost(url);
+getApi();
+
+// const loader = document.querySelector(".loader");
+// const blogPost = document.querySelector(".post");
+
+// const queryString = document.location.search;
+// const params = new URLSearchParams(queryString);
+// const id = params.get("id");
+
+// const url =
+//   "https://projects.mathildeelinor.no/wp-json/wp/v2/posts/" + id + "/?_embed";
+
+// async function getBlogPost(url) {
+//   const response = await fetch(url);
+//   const post = await response.json();
+//   console.log(post);
+
+//   const date = new Date(post.date).toLocaleDateString("utc", {
+//     year: "numeric",
+//     month: "long",
+//     day: "2-digit",
+//   });
+//   console.log(date);
+
+//   loader.style.display = "none";
+//   document.title += ` | ${post.title.rendered}`;
+//   blogPost.innerHTML += `
+//     <h1>${post.title.rendered}</h1>
+//     <h2>${date}</h2>
+//     <div class="blogpost-content">${post.content.rendered}</div>
+//     <p class="signature">- ${post._embedded.author[0].name}</p>
+//     `;
+// }
+
+// getBlogPost(url);

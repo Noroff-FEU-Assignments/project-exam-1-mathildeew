@@ -321,6 +321,43 @@ ul {
   text-align: right;
 }
 
+.img-modal span {
+  width: 25px;
+  height: 2px;
+  background: black;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 34%;
+  right: 40px;
+}
+
+.img-modal span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.img-modal span:nth-child(2) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.img-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: var(--almost-white);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-modal img {
+  height: 250px;
+}
+
 /* ABOUT
 ------------------------- */
 .about {

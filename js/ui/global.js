@@ -33,7 +33,7 @@ async function getApi() {
       const blogPost = await (
         await fetch(apiUrl + "posts/" + id + "/?_embed")
       ).json();
-      post(blogPost);
+      post(blogPost, posts);
     }
   } catch (error) {
     console.log(error);

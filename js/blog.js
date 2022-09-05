@@ -12,6 +12,8 @@ function blog(posts, categories, morePosts) {
                             <option>${categories.name}</option>
   `;
 
+    console.log(categories);
+
     selectCategories.onchange = (event) => {
       // code to change category
     };

@@ -3,7 +3,7 @@ const selectCategories = document.querySelector(".categories");
 const showMore = document.querySelector(".show-more");
 const select = document.querySelectorAll("select");
 
-function blog(posts, categories) {
+function blog(posts, categories, morePosts) {
   document.title += " | Blog";
 
   // Filter by category
@@ -17,9 +17,6 @@ function blog(posts, categories) {
     };
   });
 
-  // Show more posts
-  showMore.addEventListener("click", event);
-
   // Display blogposts
   for (let i = 0; i < posts.length; i++) {
     const date = new Date(posts[i].date).toLocaleDateString("utc", {
@@ -27,7 +24,6 @@ function blog(posts, categories) {
       month: "long",
       day: "2-digit",
     });
-
     blogGrid.innerHTML += `
         <div class="posts">
           <a href="blogpost.html?id=${posts[i].id}">
@@ -40,6 +36,12 @@ function blog(posts, categories) {
           </a>
         </div>
         `;
+
+    // Show more posts button
+    showMore.addEventListener("click", showMorePosts);
+    function showMorePosts() {
+      // Code to show more posts
+    }
   }
 }
 

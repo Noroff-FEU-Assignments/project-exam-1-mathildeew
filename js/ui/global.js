@@ -4,12 +4,11 @@ const loader = document.querySelector(".loader");
 
 async function getApi() {
   try {
-    const posts = await (
-      await fetch(apiUrl + "posts?per_page=4&_embed")
-    ).json();
+    let posts = await (await fetch(apiUrl + "posts?per_page=4&_embed")).json();
     const morePosts = await (
-      await fetch(apiUrl + "posts?per_page=10&_embed")
+      await fetch(apiUrl + "posts?per_page=100&_embed")
     ).json();
+
     const pages = await (await fetch(apiUrl + "pages/")).json();
     const categories = await (await fetch(apiUrl + "categories")).json();
     loader.style.display = "none";

@@ -8,6 +8,7 @@ async function getApi() {
       await fetch(apiUrl + "posts?per_page=100&_embed")
     ).json();
     const pages = await (await fetch(apiUrl + "pages/")).json();
+    const categories = await (await fetch(apiUrl + "categories")).json();
     loader.style.display = "none";
 
     const pathName = window.location.pathname;
@@ -21,7 +22,7 @@ async function getApi() {
     }
 
     if (pathName === "/blog.html") {
-      blog(posts);
+      blog(posts, categories);
     }
 
     if (pathName === "/blogpost.html") {

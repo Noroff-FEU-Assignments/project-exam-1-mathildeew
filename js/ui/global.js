@@ -4,11 +4,9 @@ const loader = document.querySelector(".loader");
 
 async function getApi() {
   try {
-    let posts = await (await fetch(apiUrl + "posts?per_page=4&_embed")).json();
-    const morePosts = await (
+    const posts = await (
       await fetch(apiUrl + "posts?per_page=100&_embed")
     ).json();
-
     const pages = await (await fetch(apiUrl + "pages/")).json();
     const categories = await (await fetch(apiUrl + "categories")).json();
     loader.style.display = "none";
@@ -24,7 +22,7 @@ async function getApi() {
     }
 
     if (pathName === "/blog.html") {
-      blog(posts, categories, morePosts);
+      blog(posts, categories);
     }
 
     if (pathName === "/blogpost.html") {

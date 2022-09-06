@@ -12,7 +12,7 @@ function post(blogPost) {
   blogPostC.innerHTML += `
     <h1>${blogPost.title.rendered}</h1>
     <h2>${date}</h2>
-     <div class="blogpost-content">${blogPost.content.rendered}</div>
+     <div class="blogpost">${blogPost.content.rendered}</div>
     <p class="signature">- ${blogPost._embedded.author[0].name}</p>
     <p class="previous">Previous</p>
     <p class="next">Next</p>

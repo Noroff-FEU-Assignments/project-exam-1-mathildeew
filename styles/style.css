@@ -488,3 +488,63 @@ button {
   font-size: 1.6rem;
   font-style: italic;
 }
+
+/* MEDIA QUERIES
+------------------------- */
+@media (min-width: 768px) {
+  header {
+    height: 85px;
+  }
+
+  header a {
+    font-size: 5rem;
+  }
+
+  .menu-button {
+    top: 36px;
+  }
+
+  .menu-button span {
+    width: 60px;
+    height: 3px;
+  }
+
+  .latest-posts h1 {
+    font-size: 4rem;
+  }
+
+  .lop-black {
+    margin: 0 110px 30px;
+  }
+
+  .lop-black p {
+    font-size: 3.2rem;
+  }
+  .lop-img {
+    height: 493px;
+  }
+
+  .lop-blue {
+    height: 259px;
+  }
+  .lop-blue p {
+    font-size: 3.3rem;
+    text-align: center;
+  }
+
+  footer a {
+    font-size: 3rem;
+  }
+
+  .blogpost-content {
+    margin: 0 120px;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+
+  .signature {
+    font-size: 2.5rem;
+  }
+}

@@ -6,18 +6,14 @@ const select = document.querySelectorAll("select");
 function blog(posts, categories) {
   document.title += " | Blog";
 
-  function displayPosts() {
-    // posts = posts.slice(currentPosts, currentPosts + 4);
-    console.log(posts);
+  posts.forEach(function (posts) {
+    const date = new Date(posts.date).toLocaleDateString("utc", {
+      year: "numeric",
+      month: "long",
+      day: "2-digit",
+    });
 
-    posts.forEach(function (posts) {
-      const date = new Date(posts.date).toLocaleDateString("utc", {
-        year: "numeric",
-        month: "long",
-        day: "2-digit",
-      });
-
-      blogGrid.innerHTML += `
+    blogGrid.innerHTML += `
                             <div class="posts">
                               <a href="blogpost.html?id=${posts.id}">
                               <div class="post-card" style="background-image: url('${posts._embedded["wp:featuredmedia"]["0"].source_url}')">
@@ -29,24 +25,9 @@ function blog(posts, categories) {
                               </a>
                             </div>
                             `;
-    });
+  });
 
-    // Show more posts
-    const displayMoreposts = () => {
-      let currentPosts = post.slice(0, 4);
-
-      if (!(currentPosts + 4 > posts.length)) {
-        posts += 4;
-      }
-      if (currentPosts === posts.length) {
-        showMoreButton.removeEventListener("click", displayMoreposts);
-        showMoreButton.display.style = "none";
-      }
-    };
-    showMoreButton.addEventListener("click", displayMoreposts);
-  }
-
-  displayPosts();
+  // Show more posts
 
   // Filter by category
   categories.forEach(function (categories) {

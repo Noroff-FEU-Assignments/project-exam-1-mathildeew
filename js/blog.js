@@ -93,7 +93,7 @@ function blog(posts, categories) {
       });
 
       if (i === pageIndex) {
-        // showMoreBtn.style.display = "none";
+        showMoreBtn.style.display = "none";
       }
     }
   }

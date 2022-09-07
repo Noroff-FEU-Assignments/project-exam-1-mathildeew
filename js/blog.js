@@ -6,14 +6,25 @@ const blogGridPosts = document.querySelector(".blog-grid-posts");
 function blog(posts, categories) {
   document.title += " | Blog";
 
-  window.addEventListener("scroll", () => {
-    const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-    if (scrollTop + clientHeight > scrollHeight - 5) {
-      setTimeout(posts, 2000);
-    }
-  });
+  // Show more posts
+  displayPosts(posts);
 
-  posts.forEach(function (posts) {
+  // Filter by category
+  categories.forEach(function (categories) {
+    selectCategories.innerHTML += `
+                            <option>${categories.name}</option>
+  `;
+
+    selectCategories.onchange = (event) => {
+      // code to change category
+    };
+  });
+}
+
+getApi();
+
+function displayPosts(posts) {
+  posts.forEach((posts) => {
     const date = new Date(posts.date).toLocaleDateString("utc", {
       year: "numeric",
       month: "long",
@@ -33,19 +44,4 @@ function blog(posts, categories) {
                           </div>
                             `;
   });
-
-  // Show more posts
-
-  // Filter by category
-  categories.forEach(function (categories) {
-    selectCategories.innerHTML += `
-                            <option>${categories.name}</option>
-  `;
-
-    selectCategories.onchange = (event) => {
-      // code to change category
-    };
-  });
 }
-
-getApi();

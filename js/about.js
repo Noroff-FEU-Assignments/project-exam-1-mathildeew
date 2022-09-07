@@ -1,11 +1,13 @@
-const aboutContainer = document.querySelector(".about");
+const aboutContainer = document.querySelector(".content");
 
 function about(pages) {
   document.title += " | About";
 
   aboutContainer.innerHTML += `
-  ${pages[0].content.rendered}
-  `;
+                              <div class="wp-content ">
+                                ${pages[0].content.rendered}
+                              </div>
+                              `;
 }
 
 getApi();

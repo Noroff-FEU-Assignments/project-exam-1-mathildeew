@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
-
     <title>Cerchio Studio</title>
   </head>
   <body>
@@ -21,7 +20,6 @@
         <span></span>
       </div>
     </header>
-
     <nav>
       <ul>
         <li><a href="blog.html">Blog</a></li>
@@ -31,19 +29,16 @@
     </nav>
 
     <main class="blog">
-      <section class="blog-intro">
         <h1>Blog</h1>
         <div class="filter">
           <p>Archive</p>
+          <select name="categories" class="categories" id="categories"></select>
         </div>
-        <select name="categories" class="categories" id="categories"></select>
-      </section>
-
-      <div class="blog-grid2">
+        <div class="blog-grid-posts"></div>
         <div class="loader"></div>
-      </div>
-      <p class="show-more">Show more</p>
+      </section>
     </main>
+
     <footer>
       <div class="footer-content">
         <div>
@@ -52,19 +47,17 @@
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
-          <div class="footer-adress">
-            <p>Cerchio Studio</p>
-            <p>Piazza del Duomo</p>
-            <p>56126 Pisa PI</p>
-            <p>Italia</p>
-          </div>
-          <div>
-            <p>cerchio@studio.com</p>
-            <p>+39 0549 645132</p>
-          </div>
         </div>
         <div>
-          <img src="images/cerchio-logo.png" alt="Cerchio logo" />
+          <p>Cerchio Studio</p>
+          <p>Piazza del Duomo</p>
+          <p>56126 Pisa PI</p>
+          <p>Italia</p>
+          <p>cerchio@studio.com</p>
+          <p>+39 0549 645132</p>
+        </div>
+        <div>
+          <img src="images/cerchio-logo.png" alt="Cerchio Studio logo" />
         </div>
       </div>
     </footer>

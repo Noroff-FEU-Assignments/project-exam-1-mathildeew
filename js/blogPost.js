@@ -1,4 +1,4 @@
-const blogPostC = document.querySelector(".blogpost-content");
+const blogPostContent = document.querySelector(".content");
 
 function post(blogPost) {
   document.title += ` | ${blogPost.title.rendered}`;
@@ -9,24 +9,16 @@ function post(blogPost) {
     day: "2-digit",
   });
 
-  blogPostC.innerHTML += `
-    <h1>${blogPost.title.rendered}</h1>
-    <h2>${date}</h2>
-     <div class="blogpost">${blogPost.content.rendered}</div>
-    <p class="signature">- ${blogPost._embedded.author[0].name}</p>
-    <p class="previous">Previous</p>
-    <p class="next">Next</p>
-    `;
+  blogPostContent.innerHTML = `
+                              <div class="wp-content">
+                               <h1>${blogPost.title.rendered}</h1>
+                               <h2>${date}</h2>
+                               <div class="blogpost">${blogPost.content.rendered}</div>
+                               <p class="signature"> ${blogPost._embedded.author[0].name}</p>
+                              </div>
+                              `;
 
   // Previous & next blogpost
-  const previous = document.querySelector(".previous");
-  const next = document.querySelector(".next");
-
-  previous.addEventListener("click", previousPost);
-  next.addEventListener("click", nextPost);
-
-  function previousPost() {}
-  function nextPost() {}
 
   // Bigger image & close bigger image
   const smallImg = document.querySelectorAll("figure");

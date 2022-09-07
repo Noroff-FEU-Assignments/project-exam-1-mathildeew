@@ -1,10 +1,17 @@
-const blogGrid = document.querySelector(".blog-grid2");
 const selectCategories = document.querySelector(".categories");
 const showMoreButton = document.querySelector(".show-more");
 const select = document.querySelectorAll("select");
+const blogGridPosts = document.querySelector(".blog-grid-posts");
 
 function blog(posts, categories) {
   document.title += " | Blog";
+
+  window.addEventListener("scroll", () => {
+    const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+    if (scrollTop + clientHeight > scrollHeight - 5) {
+      setTimeout(posts, 2000);
+    }
+  });
 
   posts.forEach(function (posts) {
     const date = new Date(posts.date).toLocaleDateString("utc", {
@@ -13,7 +20,7 @@ function blog(posts, categories) {
       day: "2-digit",
     });
 
-    blogGrid.innerHTML += `
+    blogGridPosts.innerHTML += `
                             <div class="posts">
                               <a href="blogpost.html?id=${posts.id}">
                               <div class="post-card" style="background-image: url('${posts._embedded["wp:featuredmedia"]["0"].source_url}')">
@@ -22,8 +29,8 @@ function blog(posts, categories) {
                                   <h3>${date}</h3>
                                 </div>
                               </div>
-                              </a>
-                            </div>
+                            </a>
+                          </div>
                             `;
   });
 

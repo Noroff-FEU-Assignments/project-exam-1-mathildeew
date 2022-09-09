@@ -1,3 +1,5 @@
+// import { errorMessage } from "./errorMessage.js";
+
 const apiUrl = "https://projects.mathildeelinor.no/wp-json/wp/v2/";
 
 const loader = document.querySelector(".loader");
@@ -35,7 +37,12 @@ async function getApi() {
       ).json();
       post(blogPost, posts);
     }
+
+    if (pathName === "/contact.html") {
+      contact();
+    }
   } catch (error) {
     console.log(error);
+    errorMessage("error", error, ".error-message");
   }
 }

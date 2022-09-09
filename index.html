@@ -23,35 +23,32 @@
 
     <nav>
       <ul>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a class="hover" href="blog.html">Blog</a></li>
+        <li><a class="hover" href="about.html">About</a></li>
+        <li><a class="hover" href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
     <div class="navnav"></div>
 
-    </div>
-
     <section class="latest-posts">
       <h1>Latest posts</h1>
-      <div class="show-more"></div>
       <div class="loader"></div>
-
-      </div>
+      <div class="error-message"></div>
       <div class="blog-grid"></div>
       <div class="carousel"></div>
-      <!-- <div class="loader"></div> -->
-      <button id="prev-button">Previous</button>
-      <button id="next-button">Next</button>
-
+      <div class="carouselbtn">
+        <button id="prevbtn">Previous</button>
+        <button id="nextbtn">Next</button>
+      </div>
+      <div class="show-more"></div>
     </section>
 
     <div class="learn-our-process">
       <div class="lop-img">
         <div class="lop-black">
           <p>
-            ed ut perspiciatis unde omnis iste natus error sit voluptatem
+            Ed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium
           </p>
         </div>
@@ -90,9 +87,9 @@
         </div>
       </div>
     </footer>
-    <script src="js/ui/global.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/navigation.js"></script>
+    <!-- <script type="" src="js/data/global.js"></script> -->
+    <script type="module" src="js/index.js"></script>
+    <script src="js/ui/navigation.js"></script>
     <script type="module" src="js/ui/errorMessage.js"></script>
   </body>
 </html>

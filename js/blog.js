@@ -19,8 +19,7 @@ async function getBlogPosts() {
 
     displayBlogPosts(allBlogPosts);
     loadBlogPostNav(allBlogPosts);
-
-    filterByCategory(categories);
+    filterByCategory(categories, allBlogPosts);
   } catch (error) {
     console.log(error);
     errorMessage();
@@ -54,7 +53,7 @@ function displayBlogPosts(posts) {
     });
 
     const blogPostContent = document.createElement("div");
-    blogPostContent.classList.add("blog-grid-posts");
+    blogPostContent.classList.add("blog-grid-posts", "fade");
     blogPostContent.innerHTML = `
                                 <a href="blogpost.html?id=${posts[i].id}">
                                 <div class="post-card" style="background-image: url('${posts[i]._embedded["wp:featuredmedia"]["0"].source_url}')">
@@ -91,12 +90,14 @@ function loadBlogPostNav(posts) {
 }
 
 // Filter by category
-function filterByCategory(categories) {
+function filterByCategory(categories, blogPosts) {
   categories.forEach(function (categories) {
     selectCategories.innerHTML += `
     <option>${categories.name}</option>
 `;
   });
 
-  selectCategories.onchange = (event) => {};
+  select.onchange = (event) => {
+    console.log(blogPosts);
+  };
 }

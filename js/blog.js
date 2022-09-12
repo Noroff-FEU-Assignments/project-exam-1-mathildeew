@@ -54,16 +54,17 @@ function displayBlogPosts(posts) {
     });
 
     const blogPostContent = document.createElement("div");
+    blogPostContent.classList.add("blog-grid-posts");
     blogPostContent.innerHTML = `
-    <a href="blogpost.html?id=${posts[i].id}">
-    <div class="post-card" style="background-image: url('${posts[i]._embedded["wp:featuredmedia"]["0"].source_url}')">
-      <div class="posts-card-background">
-        <h2>${posts[i].title.rendered}</h2>
-        <h3>${date}</h3>
-      </div>
-    </div>
-    </a>
-    `;
+                                <a href="blogpost.html?id=${posts[i].id}">
+                                <div class="post-card" style="background-image: url('${posts[i]._embedded["wp:featuredmedia"]["0"].source_url}')">
+                                  <div class="pc-background">
+                                    <h2>${posts[i].title.rendered}</h2>
+                                    <h3>${date}</h3>
+                                  </div>
+                                </div>
+                                </a>
+                                `;
 
     blogPostContainer.append(blogPostContent);
   }
@@ -81,9 +82,9 @@ function loadBlogPostNav(posts) {
       displayBlogPosts(posts);
     });
 
-    // if (i == pageIndex) {
-    //   span.style.textDecoration = "underline";
-    // }
+    if (i === pageIndex) {
+      span.style.textDecoration = "underline";
+    }
 
     postsNav.append(span);
   }

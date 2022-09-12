@@ -27,7 +27,7 @@ async function getLatestPosts() {
         slideOne.innerHTML += `
                               <a href="blogpost.html?id=${blogPosts[i].id}">
                               <div class="post-card" style="background-image: url('${blogPosts[i]._embedded["wp:featuredmedia"]["0"].source_url}')">
-                                <div class="posts-card-background">
+                                <div class="pc-background">
                                   <h2>${blogPosts[i].title.rendered}</h2>
                                   <h3>${date}</h3>
                                 </div>
@@ -38,7 +38,7 @@ async function getLatestPosts() {
         slideTwo.innerHTML += `
                               <a href="blogpost.html?id=${blogPosts[i].id}">
                               <div class="post-card" style="background-image: url('${blogPosts[i]._embedded["wp:featuredmedia"]["0"].source_url}')">
-                                <div class="posts-card-background">
+                                <div class="pc-background">
                                   <h2>${blogPosts[i].title.rendered}</h2>
                                   <h3>${date}</h3>
                                 </div>
@@ -49,7 +49,7 @@ async function getLatestPosts() {
         slideThree.innerHTML += `
                                 <a href="blogpost.html?id=${blogPosts[i].id}">
                                 <div class="post-card" style="background-image: url('${blogPosts[i]._embedded["wp:featuredmedia"]["0"].source_url}')">
-                                  <div class="posts-card-background">
+                                  <div class="pc-background">
                                     <h2>${blogPosts[i].title.rendered}</h2>
                                     <h3>${date}</h3>
                                   </div>
@@ -103,8 +103,8 @@ function changeSlides(n) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace("active", "");
+    dots[i].className = dots[i].className.replace("dotactive", "");
   }
   slides[slideIndex - 1].style.display = "grid";
-  dots[slideIndex - 1].className += " active";
+  dots[slideIndex - 1].className += " dotactive";
 }

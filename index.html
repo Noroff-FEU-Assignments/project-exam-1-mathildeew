@@ -35,13 +35,21 @@
       <h1>Latest posts</h1>
       <div class="loader"></div>
       <div class="error-message"></div>
-      <div class="blog-grid"></div>
-      <div class="carousel"></div>
-      <div class="carouselbtn">
-        <button id="prevbtn">Previous</button>
-        <button id="nextbtn">Next</button>
+      <div class="blog-grid slide-one fade"></div>
+      <div class="blog-grid slide-two fade"></div>
+      <div class="blog-grid slide-three fade"></div>
+
+      <div class="carousel-btn">
+        <p class="prev">Previous posts</p>
+        <p class="next">Next posts</p>
       </div>
-      <div class="show-more"></div>
+
+      <div style="text-align: center">
+        <span class="dot dotone"></span>
+        <span class="dot dottwo"></span>
+        <span class="dot dotthree"></span>
+      </div>
+      <a href="blog.html" class="blog-link">See more</a>
     </section>
 
     <div class="learn-our-process">
@@ -89,6 +97,7 @@
     </footer>
     <!-- <script type="" src="js/data/global.js"></script> -->
     <script type="module" src="js/index.js"></script>
+    <script src="js/ui/carousel.js"></script>
     <script src="js/ui/navigation.js"></script>
     <script type="module" src="js/ui/errorMessage.js"></script>
   </body>

@@ -223,14 +223,6 @@ footer img {
   text-align: left;
 }
 
-.carouselbtn {
-  display: flex;
-}
-.carouselbtn button {
-  color: var(--almost-black);
-  background-color: var(--almost-white);
-}
-
 .post-card {
   height: 300px;
   width: 300px;
@@ -240,6 +232,10 @@ footer img {
 
 .posts-card-background {
   background: var(--light-green);
+}
+
+.carousel-btn {
+  display: none;
 }
 
 .lop-black {
@@ -278,7 +274,8 @@ footer img {
   margin: 0 10px 16px;
 }
 
-.lop-blue a {
+.lop-blue a,
+.blog-link {
   font: 2rem var(--qua);
   text-transform: uppercase;
   margin: 0 10px;
@@ -329,6 +326,7 @@ select:focus {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  border-radius: 30% 30% 30% 0;
 }
 
 .posts-card-background {
@@ -379,6 +377,12 @@ select:focus {
 
 .blogpost h2 {
   font: 2rem var(--qua);
+}
+
+.blogposts-nav {
+  font-size: 3rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .signature {
@@ -563,9 +567,85 @@ button {
     font-size: 4rem;
   }
 
+  .blog-link {
+    display: none;
+  }
+
+  .carousel-btn {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .blog-grid {
+    padding: 0 5%;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    /* cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -28px;
+    padding: 1px 12px;
+    color: var(--almost-black);
+    font-size: 2rem;
+    transition: 0.6s ease;*/
+    border: 2px solid var(--almost-black);
+  }
+
+  /* Position the "next button" to the right */
+  /* .next {
+    right: 0;
+  }
+
+  .prev {
+    left: 0;
+  } */
+
+  /* On hover, add a black background color with a little bit see-through */
+  /* .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  } */
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: var(--light-green);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active,
+  .dot:hover {
+    /* background-color: var(--light-green); */
+    border: 1px solid var(--almost-black);
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   .blog-grid,
   .blog-grid-posts {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 20px;

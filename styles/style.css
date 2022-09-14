@@ -587,6 +587,8 @@ textarea:focus {
 
   .latest-posts {
     align-items: center;
+    margin: 0 auto 50px;
+    max-width: 1000px;
   }
 
   .latest-posts h1 {
@@ -597,38 +599,42 @@ textarea:focus {
     margin-bottom: 30px;
   }
 
-  .blog-link {
+  .blog-button {
     display: none;
   }
 
   .carousel-btn {
+    display: contents;
     width: 100%;
-    /* display: flex; */
     align-items: center;
   }
 
-  .prev,
-  .next {
-    background-color: var(--light-blue);
+  .carousel-btn button {
+    font-size: 3rem;
+    background-color: rgba(205, 218, 228, 60%);
     cursor: pointer;
     position: absolute;
-    top: 485px;
-    width: 40px;
-    height: 60px;
+    top: 466px;
+    width: 80px;
+    height: 80px;
     padding: 1px 12px;
     color: var(--almost-black);
     transition: 0.6s ease;
     border-radius: 100%;
     text-align: center;
-    font-size: 3rem;
+    border: none;
   }
 
   .next {
-    right: 10px;
+    right: 5px;
   }
 
   .prev {
-    left: 10px;
+    left: 5px;
+  }
+
+  .carousel-btn button:active {
+    background-color: var(--light-blue);
   }
 
   /* .prev:hover,
@@ -650,7 +656,7 @@ textarea:focus {
   .dotactive,
   .dot:hover {
     background-color: var(--light-blue);
-    border: 1px solid var(--light-blue);
+    /* border: 1px solid var(--light-blue); */
   }
 
   /* Fading animation */
@@ -754,5 +760,20 @@ textarea:focus {
   .modal-close {
     top: 20%;
     right: 175px;
+  }
+}
+
+@media (min-width: 1110px) {
+  .carousel-btn button {
+    transition: none;
+  }
+
+  .prev {
+    left: unset;
+    margin-right: 1020px;
+  }
+  .next {
+    right: unset;
+    margin-left: 1020px;
   }
 }

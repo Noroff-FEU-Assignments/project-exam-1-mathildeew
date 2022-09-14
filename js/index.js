@@ -10,15 +10,12 @@ const navButtons = document.querySelector(".carousel-btn");
 const baseUrl = "https://projects.mathildeelinor.no/wp-json/wp/v2/posts";
 const latestPost = baseUrl + "?per_page=12&_embed";
 
-navButtons.style.display = "none";
-
 // Fetch API data
 async function getLatestPosts() {
   try {
     const blogPosts = await (await fetch(latestPost)).json();
     console.log(blogPosts);
     loader.style.display = "none";
-    navButtons.style.display = "flex";
 
     for (let i = 0; i < blogPosts.length; i++) {
       const date = new Date(blogPosts[0].date).toLocaleDateString("utc", {

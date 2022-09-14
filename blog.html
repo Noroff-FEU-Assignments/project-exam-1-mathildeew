@@ -29,15 +29,21 @@
     </nav>
 
     <main class="blog">
-      <h1>Blog</h1>
-      <div class="filter">
-        <p>Archive</p>
-        <select name="categories" class="categories" id="categories"></select>
-      </div>
-      <div class="blogposts"></div>
-      <div class="loader"></div>
-      <div class="error-message"></div>
-      <div class="blogposts-nav"></div>
+      <section class="blog-content">
+        <h1>Blog</h1>
+
+        <div class="filter">
+          <p>Archive</p>
+          <select name="categories" class="categories" id="categories">
+            <option value="All">All</option>
+          </select>
+        </div>
+
+        <div class="blog-grid"></div>
+        <div class="loader"></div>
+        <div class="error-message"></div>
+        <div class="blogposts-nav"></div>
+      </section>
     </main>
 
     <footer>

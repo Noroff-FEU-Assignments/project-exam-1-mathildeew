@@ -59,11 +59,8 @@ function biggerImage() {
       imgModal.style.display = "flex";
       body.style.overflow = "hidden";
       imgModal.innerHTML += `
-                                <div class="modal-close">
-                                  <span></span>
-                                  <span></span>
-                                </div>
                                 <img src="${event.target.src}"/>
+                                <p>Close</p>
     
         `;
 

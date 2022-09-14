@@ -3,7 +3,7 @@ import { errorMessage } from "./ui/errorMessage.js";
 const loader = document.querySelector(".loader");
 const selectCategories = document.querySelector(".categories");
 const select = document.querySelectorAll("select");
-const blogPostContainer = document.querySelector(".blogposts");
+const blogPostContainer = document.querySelector(".blog-grid");
 const postsNav = document.querySelector(".blogposts-nav");
 
 document.title += " | Blog";

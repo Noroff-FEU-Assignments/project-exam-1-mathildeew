@@ -302,7 +302,6 @@ footer img {
 
 /*  BLOGPAGE
 -------------------------  */
-
 .blog {
   background: var(--almost-white);
   width: 100%;
@@ -418,9 +417,14 @@ select:focus {
   margin: 0 auto;
 }
 
+.wp-content {
+  margin-bottom: 50px;
+}
+
 .wp-content img {
   width: 100%;
   height: auto;
+  /* max-height: 540px; */
   object-fit: cover;
   margin-bottom: 10px;
 }
@@ -549,7 +553,7 @@ textarea:focus {
 
 /* MEDIA QUERIES */
 
-@media (min-width: 650px) {
+@media (min-width: 850px) {
   p {
     line-height: 1.8;
   }
@@ -764,7 +768,7 @@ textarea:focus {
   .menu-button {
     margin: 0;
     top: 26px;
-    right: 63px;
+    right: 64px;
   }
 
   .carousel-btn button {

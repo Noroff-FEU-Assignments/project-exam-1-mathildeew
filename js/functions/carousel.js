@@ -1,6 +1,5 @@
 export function carousel() {
   const slides = document.querySelectorAll(".blog-grid");
-  const navButtons = document.querySelector(".carousel-btn");
 
   let slideIndex = 1;
   changeSlides(slideIndex);
@@ -20,7 +19,7 @@ export function carousel() {
     changeSlides((slideIndex += 1));
   }
 
-  // To get the dots work as controls
+  // To get the dots work as controls // Not activeded!
   function currentSlide(n) {
     changeSlides((slideIndex = n));
   }

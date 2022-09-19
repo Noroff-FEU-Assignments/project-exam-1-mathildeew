@@ -10,7 +10,7 @@ const postsNav = document.querySelector(".blogposts-nav");
 const baseUrl = "https://projects.mathildeelinor.no/wp-json/wp/v2/";
 const blogPostsUrl = "posts/?per_page=100&_embed";
 
-// Get all blog and display
+// Get all blogpost, navigation between postsperpage, filter & search
 document.title += " | Blog";
 
 async function getBlogPosts() {
@@ -35,7 +35,7 @@ getBlogPosts();
 let pageIndex = 0;
 let postsPerPage = 10;
 
-function displayBlogPosts(posts) {
+function displayBlogPosts(blogPosts) {
   blogPostContainer.innerHTML = "";
 
   for (
@@ -43,11 +43,11 @@ function displayBlogPosts(posts) {
     i < pageIndex * postsPerPage + postsPerPage;
     i++
   ) {
-    if (!posts[i]) {
+    if (!blogPosts[i]) {
       break;
     }
 
-    const date = new Date(posts[0].date).toLocaleDateString("utc", {
+    const date = new Date(blogPosts[0].date).toLocaleDateString("utc", {
       year: "numeric",
       month: "long",
       day: "2-digit",
@@ -56,10 +56,10 @@ function displayBlogPosts(posts) {
     const blogPostContent = document.createElement("div");
     blogPostContent.classList.add("blog-grid-posts", "fade");
     blogPostContent.innerHTML = `
-                                <a href="blogpost.html?id=${posts[i].id}">
-                                <div class="post-card" style="background-image: url('${posts[i]._embedded["wp:featuredmedia"]["0"].source_url}')">
+                                <a href="blogpost.html?id=${blogPosts[i].id}">
+                                <div class="post-card" style="background-image: url('${blogPosts[i]._embedded["wp:featuredmedia"]["0"].source_url}')">
                                   <div class="pc-background">
-                                    <h2>${posts[i].title.rendered}</h2>
+                                    <h2>${blogPosts[i].title.rendered}</h2>
                                     <h3>${date}</h3>
                                   </div>
                                 </div>
@@ -71,15 +71,15 @@ function displayBlogPosts(posts) {
 }
 
 // Navigation between blogposts
-function loadBlogPostNav(posts) {
+function loadBlogPostNav(blogPosts) {
   postsNav.innerHTML = "";
 
-  for (let i = 0; i < posts.length / postsPerPage; i++) {
+  for (let i = 0; i < blogPosts.length / postsPerPage; i++) {
     const span = document.createElement("span");
     span.innerHTML = i + 1;
     span.addEventListener("click", (e) => {
       pageIndex = e.target.innerHTML - 1;
-      displayBlogPosts(posts);
+      displayBlogPosts(blogPosts);
     });
 
     if (i === pageIndex) {

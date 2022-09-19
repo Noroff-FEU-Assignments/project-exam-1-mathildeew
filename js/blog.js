@@ -2,7 +2,8 @@ import { errorMessage } from "./ui/errorMessage.js";
 
 const loader = document.querySelector(".loader");
 const selectCategories = document.querySelector(".categories");
-const select = document.querySelectorAll("select");
+const option = document.querySelector("option");
+const select = document.querySelector("select");
 const blogPostContainer = document.querySelector(".blog-grid");
 const postsNav = document.querySelector(".blogposts-nav");
 
@@ -10,6 +11,7 @@ document.title += " | Blog";
 
 const baseUrl = "https://projects.mathildeelinor.no/wp-json/wp/v2/";
 const blogPostsUrl = "posts/?per_page=100&_embed";
+const catgUrl = baseUrl + "categories";
 
 async function getBlogPosts() {
   try {
@@ -33,7 +35,7 @@ let pageIndex = 0;
 let postsPerPage = 10;
 
 function displayBlogPosts(posts) {
-  console.log(posts);
+  // console.log(posts);
 
   blogPostContainer.innerHTML = "";
 
@@ -90,14 +92,27 @@ function loadBlogPostNav(posts) {
 }
 
 // Filter by category
-function filterByCategory(categories, blogPosts) {
+function filterByCategory(categories, allBlogPosts) {
+  // Create list
   categories.forEach(function (categories) {
     selectCategories.innerHTML += `
-    <option>${categories.name}</option>
-`;
+      <option value="${categories.name}">${categories.name}</option>
+  `;
   });
 
-  select.onchange = (event) => {
-    console.log(blogPosts);
-  };
+  // select.addEventListener("change", filterPosts);
+  // function filterPosts() {
+  //   for (let i = 0; i < allBlogPosts.length; i++) {
+  //     if (select.value === "All") {
+  //       displayBlogPosts(allBlogPosts);
+  //     } else {
+  //       let filteredPosts = allBlogPosts.filter((post) => {
+  //         return (
+  //           select.value === allBlogPosts[i]._embedded["wp:term"]["0"]["0"].name
+  //         );
+  //       });
+  //       displayBlogPosts(filteredPosts);
+  //     }
+  //   }
+  // }
 }

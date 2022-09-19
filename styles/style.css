@@ -745,6 +745,28 @@ textarea:focus {
 }
 
 @media (min-width: 1110px) {
+  header {
+    justify-content: center;
+  }
+
+  header a {
+    margin: 0;
+  }
+
+  .wrapper {
+    width: 1085px;
+    max-width: 1400px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu-button {
+    margin: 0;
+    top: 26px;
+    right: 63px;
+  }
+
   .carousel-btn button {
     transition: none;
   }

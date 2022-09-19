@@ -22,6 +22,7 @@ async function getBlogPosts() {
     displayBlogPosts(allBlogPosts);
     loadBlogPostNav(allBlogPosts);
     filterByCategory(categories, allBlogPosts);
+    search(allBlogPosts);
   } catch (error) {
     console.log(error);
     errorMessage();
@@ -90,6 +91,21 @@ function loadBlogPostNav(posts) {
     postsNav.append(span);
   }
 }
+
+// Search bar
+// const searchBar = document.querySelector("#search");
+// searchBar.addEventListener("keyup", search);
+
+// function search(allBlogPosts) {
+//   const findPost = searchBar.value;
+
+//   const searchedPost = allBlogPosts.filter((post) => {
+//     if (allBlogPosts.title.rendered.includes(findPost)) {
+//       return true;
+//     }
+//   });
+//   displayBlogPosts(searchedPost);
+// }
 
 // Filter by category
 function filterByCategory(categories, allBlogPosts) {

@@ -1,4 +1,4 @@
-import { contactForm } from "./ui/contactForm.js";
+import { contactForm } from "./functions/contactForm.js";
 document.title += " | Contact";
 
 contactForm();

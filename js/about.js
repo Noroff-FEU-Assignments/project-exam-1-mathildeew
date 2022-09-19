@@ -1,38 +1,25 @@
-import { errorMessage } from "./ui/errorMessage.js";
+import { errorMessage } from "./functions/errorMessage.js";
 
 const aboutContainer = document.querySelector(".content");
 const loader = document.querySelector(".loader");
+const apiUrl = "https://projects.mathildeelinor.no/wp-json/wp/v2/pages/88";
 
-const apiUrl = "https://projects.mathildeelinor.no/wp-json/wp/v2/pages/";
-
-document.title += " | About";
 // Get about page and display
-async function getAbout() {
+document.title += " | About";
+
+async function displayAboutContent() {
   try {
-    const aboutContent = await await (await fetch(apiUrl)).json();
+    const aboutContent = await (await fetch(apiUrl)).json();
     loader.style.display = "none";
-    console.log(aboutContent);
     aboutContainer.innerHTML += `
-                            <div class="wp-content">
-                              ${aboutContent[0].content.rendered}
-                            </div>
-                            `;
+                                  <div class="wp-content">
+                                    ${aboutContent.content.rendered}
+                                  </div>
+                                `;
   } catch (error) {
     console.log(error);
     errorMessage();
   }
 }
 
-getAbout();
-
-// function about(pages) {
-//   document.title += " | About";
-
-//   aboutContainer.innerHTML += `
-//                               <div class="wp-content ">
-//                                 ${pages[0].content.rendered}
-//                               </div>
-//                               `;
-// }
-
-// getApi();
+displayAboutContent();

@@ -1,4 +1,4 @@
-import { errorMessage } from "./ui/errorMessage.js";
+import { errorMessage } from "./functions/errorMessage.js";
 
 const loader = document.querySelector(".loader");
 const selectCategories = document.querySelector(".categories");
@@ -7,11 +7,11 @@ const select = document.querySelector("select");
 const blogPostContainer = document.querySelector(".blog-grid");
 const postsNav = document.querySelector(".blogposts-nav");
 
-document.title += " | Blog";
-
 const baseUrl = "https://projects.mathildeelinor.no/wp-json/wp/v2/";
 const blogPostsUrl = "posts/?per_page=100&_embed";
-const catgUrl = baseUrl + "categories";
+
+// Get all blog and display
+document.title += " | Blog";
 
 async function getBlogPosts() {
   try {
@@ -22,7 +22,7 @@ async function getBlogPosts() {
     displayBlogPosts(allBlogPosts);
     loadBlogPostNav(allBlogPosts);
     filterByCategory(categories, allBlogPosts);
-    search(allBlogPosts);
+    // search(allBlogPosts);
   } catch (error) {
     console.log(error);
     errorMessage();
@@ -36,8 +36,6 @@ let pageIndex = 0;
 let postsPerPage = 10;
 
 function displayBlogPosts(posts) {
-  // console.log(posts);
-
   blogPostContainer.innerHTML = "";
 
   for (
@@ -92,21 +90,6 @@ function loadBlogPostNav(posts) {
   }
 }
 
-// Search bar
-// const searchBar = document.querySelector("#search");
-// searchBar.addEventListener("keyup", search);
-
-// function search(allBlogPosts) {
-//   const findPost = searchBar.value;
-
-//   const searchedPost = allBlogPosts.filter((post) => {
-//     if (allBlogPosts.title.rendered.includes(findPost)) {
-//       return true;
-//     }
-//   });
-//   displayBlogPosts(searchedPost);
-// }
-
 // Filter by category
 function filterByCategory(categories, allBlogPosts) {
   // Create list
@@ -132,3 +115,18 @@ function filterByCategory(categories, allBlogPosts) {
   //   }
   // }
 }
+
+// Search bar
+// const searchBar = document.querySelector("#search");
+// searchBar.addEventListener("keyup", search);
+
+// function search(allBlogPosts) {
+//   const findPost = searchBar.value;
+
+//   const searchedPost = allBlogPosts.filter((post) => {
+//     if (allBlogPosts.title.rendered.includes(findPost)) {
+//       return true;
+//     }
+//   });
+//   displayBlogPosts(searchedPost);
+// }

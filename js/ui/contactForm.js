@@ -33,8 +33,12 @@ export function contactForm() {
     } else {
       subjectError.style.display = "block";
     }
+    if (checkLength(message.value, 24) === true) {
+      messageError.style.display = "none";
+    } else {
+      messageError.style.display = "block";
+    }
     sendForm();
-    console.log("hello");
   }
 
   form.addEventListener("submit", validateForm);
@@ -58,7 +62,7 @@ export function contactForm() {
       checkLength(name.value, 4) === true &&
       validateEmail(email.value) === true &&
       checkLength(subject.value, 14) === true &&
-      checkLength(message.value, 24)
+      checkLength(message.value, 24) === true
     ) {
       window.scrollTo(0, 0);
       body.style.overflow = "hidden";

@@ -22,6 +22,8 @@ async function getBlogPosts() {
     displayBlogPosts(allBlogPosts);
     loadBlogPostNav(allBlogPosts);
     filterByCategory(categories, allBlogPosts);
+    console.log(allBlogPosts);
+
     // search(allBlogPosts);
   } catch (error) {
     console.log(error);
@@ -95,25 +97,27 @@ function filterByCategory(categories, allBlogPosts) {
   // Create list
   categories.forEach(function (categories) {
     selectCategories.innerHTML += `
-      <option value="${categories.name}">${categories.name}</option>
-  `;
+                                    <option value="${categories.id}">${categories.name}</option>
+                                  `;
   });
 
-  // select.addEventListener("change", filterPosts);
-  // function filterPosts() {
-  //   for (let i = 0; i < allBlogPosts.length; i++) {
-  //     if (select.value === "All") {
-  //       displayBlogPosts(allBlogPosts);
-  //     } else {
-  //       let filteredPosts = allBlogPosts.filter((post) => {
-  //         return (
-  //           select.value === allBlogPosts[i]._embedded["wp:term"]["0"]["0"].name
-  //         );
-  //       });
-  //       displayBlogPosts(filteredPosts);
-  //     }
-  //   }
-  // }
+  select.addEventListener("change", filterPosts);
+
+  function filterPosts() {
+    for (let i = 0; i < allBlogPosts.length; i++) {
+      const catId = allBlogPosts[i].categories[0];
+      const filteredPosts = allBlogPosts.filter(() => {
+        return select.value === catId;
+      });
+      console.log(catId);
+
+      if (select.value === "All") {
+        displayBlogPosts(allBlogPosts);
+      } else {
+        displayBlogPosts(filteredPosts);
+      }
+    }
+  }
 }
 
 // Search bar

@@ -109,7 +109,6 @@ function filterByCategory(categories, allBlogPosts) {
       const filteredPosts = allBlogPosts.filter(() => {
         return select.value === catId;
       });
-      console.log(catId);
 
       if (select.value === "All") {
         displayBlogPosts(allBlogPosts);

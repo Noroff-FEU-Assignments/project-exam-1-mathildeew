@@ -22,7 +22,7 @@ async function getBlogPosts() {
     displayBlogPosts(allBlogPosts);
     loadBlogPostNav(allBlogPosts);
     filterByCategory(categories, allBlogPosts);
-    console.log(allBlogPosts);
+    // console.log(allBlogPosts);
 
     // search(allBlogPosts);
   } catch (error) {
@@ -101,14 +101,17 @@ function filterByCategory(categories, allBlogPosts) {
                                   `;
   });
 
-  select.addEventListener("change", filterPosts);
-
-  function filterPosts() {
+  select.addEventListener("change", () => {
+    const filter = select.value;
     for (let i = 0; i < allBlogPosts.length; i++) {
-      const catId = allBlogPosts[i].categories[0];
+      const catId = String(allBlogPosts[i].categories[0]);
+
+      console.log(catId);
+
       const filteredPosts = allBlogPosts.filter(() => {
-        return select.value === catId;
+        if (filter === catId) return true;
       });
+      // console.log(filteredPosts);
 
       if (select.value === "All") {
         displayBlogPosts(allBlogPosts);
@@ -116,7 +119,7 @@ function filterByCategory(categories, allBlogPosts) {
         displayBlogPosts(filteredPosts);
       }
     }
-  }
+  });
 }
 
 // Search bar

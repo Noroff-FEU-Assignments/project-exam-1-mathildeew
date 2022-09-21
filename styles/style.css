@@ -223,7 +223,7 @@ footer img {
   display: none;
 }
 
-.blog-button {
+.blog-btn {
   font: 2rem var(--qua);
   text-transform: uppercase;
   text-align: center;
@@ -600,7 +600,7 @@ textarea:focus {
     margin-bottom: 30px;
   }
 
-  .blog-button {
+  .blog-btn {
     display: none;
   }
 

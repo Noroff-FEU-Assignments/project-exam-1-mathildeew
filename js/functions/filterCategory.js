@@ -1,4 +1,4 @@
-import { displayBlogPosts } from "../displayPosts/displayBlogPosts.js";
+import { displayBlogPosts } from "../blog.js";
 
 export function filterByCategory(blogPosts) {
   const select = document.querySelector("select");

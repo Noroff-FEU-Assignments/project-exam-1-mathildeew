@@ -79,6 +79,7 @@ header a {
   position: absolute;
   top: 20px;
   right: 20px;
+  cursor: pointer;
 }
 
 .menu-button span {
@@ -125,21 +126,13 @@ nav li {
   margin-bottom: 20px;
 }
 
-.hover:hover {
-  /* display: inline-block; */
-  /* vertical-align: middle; */
-  /* -webkit-transform: perspective(1px) translateZ(0); */
-  /* transform: perspective(1px) translateZ(0); */
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
+.hover {
+  display: inline-block;
+  transform: perspective(1px) translateZ(0);
+  transition: transform 0.3s;
 }
-.hover:hover,
-.hover:focus,
-.hover:active {
-  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+.hover:hover {
+  transform: skew(-10deg);
 }
 
 .loader {
@@ -354,6 +347,10 @@ select:focus {
   padding: 30px 0 0 0;
 }
 
+.blogpost img {
+  cursor: pointer;
+}
+
 .signature {
   font: 2rem var(--ernie);
   text-align: right;
@@ -379,8 +376,12 @@ select:focus {
   margin-bottom: 20px;
 }
 
-.img-modal p {
+.img-modal button {
+  font-size: 1.6rem;
   color: grey;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .modal-close {
@@ -543,6 +544,7 @@ textarea:focus {
   margin: 10px auto;
   display: block;
   border: none;
+  cursor: pointer;
 }
 
 .form-error {

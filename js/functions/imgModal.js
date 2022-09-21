@@ -8,7 +8,7 @@ export function biggerImage() {
       body.style.overflow = "hidden";
       imgModal.innerHTML += `
                                   <img src="${event.target.src}"/>
-                                  <p>Close</p>
+                                  <button>Close</button>
       
           `;
 

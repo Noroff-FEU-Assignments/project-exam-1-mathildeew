@@ -31,7 +31,7 @@ export function carousel() {
     changeSlides((slideIndex += 1));
   }
 
-  // To get the dots work as controls // Not activeded!
+  // To get the dots work as controls
   function currentSlide(n) {
     changeSlides((slideIndex = n));
   }

@@ -1,4 +1,5 @@
 import { errorMessage } from "./functions/errorMessage.js";
+// import { filterByCategory } from "./functions/filterCategory.js";
 
 const loader = document.querySelector(".loader");
 const selectCategories = document.querySelector(".categories");
@@ -35,7 +36,7 @@ getBlogPosts();
 
 // Display blogposts
 let pageIndex = 0;
-let postsPerPage = 10;
+let postsPerPage = 4;
 
 function displayBlogPosts(blogPosts) {
   blogPostContainer.innerHTML = "";
@@ -84,9 +85,9 @@ function loadBlogPostNav(blogPosts) {
       displayBlogPosts(blogPosts);
     });
 
-    if (i === pageIndex) {
-      span.style.textDecoration = "underline";
-    }
+    // if (i === pageIndex) {
+    //   span.classList.add("activenav");
+    // }
 
     postsNav.append(span);
   }
@@ -94,6 +95,8 @@ function loadBlogPostNav(blogPosts) {
 
 // Filter by category
 function filterByCategory(categories, allBlogPosts) {
+  console.log(allBlogPosts);
+
   // Create list
   categories.forEach(function (categories) {
     selectCategories.innerHTML += `
@@ -103,20 +106,23 @@ function filterByCategory(categories, allBlogPosts) {
 
   select.addEventListener("change", () => {
     const filter = select.value;
-    for (let i = 0; i < allBlogPosts.length; i++) {
-      const catId = String(allBlogPosts[i].categories[0]);
 
-      console.log(catId);
+    for (let i = 0; i < allBlogPosts.length; i++) {
+      const catId = String(allBlogPosts[i].categories["0"]);
+
+      // console.log(allBlogPosts[i].categories["0"]);
 
       const filteredPosts = allBlogPosts.filter(() => {
-        if (filter === catId) return true;
+        if (filter === catId) {
+          return true;
+        }
       });
-      // console.log(filteredPosts);
 
       if (select.value === "All") {
         displayBlogPosts(allBlogPosts);
       } else {
         displayBlogPosts(filteredPosts);
+        console.log(select.value);
       }
     }
   });

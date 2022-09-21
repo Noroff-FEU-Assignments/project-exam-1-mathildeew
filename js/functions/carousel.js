@@ -7,9 +7,21 @@ export function carousel() {
   // Next/previous controls
   const prevBtn = document.querySelector(".prev");
   const nextBtn = document.querySelector(".next");
+  const dotOne = document.querySelector(".dotone");
+  const dotTwo = document.querySelector(".dottwo");
+  const dotThree = document.querySelector(".dotthree");
 
   prevBtn.addEventListener("click", prevSlide);
   nextBtn.addEventListener("click", nextSlide);
+  dotOne.addEventListener("click", () => {
+    currentSlide(1);
+  });
+  dotTwo.addEventListener("click", () => {
+    currentSlide(2);
+  });
+  dotThree.addEventListener("click", () => {
+    currentSlide(3);
+  });
 
   function prevSlide() {
     changeSlides((slideIndex += -1));
@@ -37,7 +49,7 @@ export function carousel() {
       slides[i].style.display = "none";
     }
     for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace("dotactive", "");
+      dots[i].className = dots[i].className.replace(" dotactive", "");
     }
     slides[slideIndex - 1].style.display = "grid";
     dots[slideIndex - 1].className += " dotactive";

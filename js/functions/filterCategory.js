@@ -12,7 +12,6 @@ export function filterByCategory(blogPosts) {
 
     if (select.value === "All") {
       displayBlogPosts(blogPosts);
-      console.log(typeof select.value);
     } else {
       displayBlogPosts(filteredPost);
     }

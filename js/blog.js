@@ -1,6 +1,7 @@
 import { errorMessage } from "./functions/errorMessage.js";
 // import { displayBlogPosts } from "./displayPosts/displayBlogPosts.js";
 import { filterByCategory } from "./functions/filterCategory.js";
+import { searchBlogPosts } from "./functions/search.js";
 
 // Get all blogpost, navigation between postsperpage, filter & search
 const loader = document.querySelector(".loader");
@@ -19,9 +20,11 @@ async function getBlogPosts() {
     displayBlogPosts(allBlogPosts);
     createCategories(categories);
     filterByCategory(allBlogPosts);
+    console.log(allBlogPosts);
+
     // console.log(allBlogPosts);
 
-    // search(allBlogPosts);
+    searchBlogPosts(allBlogPosts);
   } catch (error) {
     console.log(error);
     errorMessage();
@@ -92,8 +95,6 @@ function loadBlogPostNav(blogPosts) {
 
 // Create list of categories in drop down
 function createCategories(categories) {
-  console.log(categories);
-
   const selectCategories = document.querySelector(".categories");
 
   categories.slice(0, 4).forEach(function (categories) {

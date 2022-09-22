@@ -1,14 +1,18 @@
-// Search bar
-// const searchBar = document.querySelector("#search");
-// searchBar.addEventListener("keyup", search);
+import { displayBlogPosts } from "../blog.js";
 
-// function search(allBlogPosts) {
-//   const findPost = searchBar.value;
+// Search in blogposts
+export function searchBlogPosts(blogPosts) {
+  const search = document.querySelector("#search");
 
-//   const searchedPost = allBlogPosts.filter((post) => {
-//     if (allBlogPosts.title.rendered.includes(findPost)) {
-//       return true;
-//     }
-//   });
-//   displayBlogPosts(searchedPost);
-// }
+  search.addEventListener("keyup", () => {
+    const filter = event.target.value.trim().toLowerCase();
+
+    const filteredPost = blogPosts.filter(function (blog) {
+      if (blog.title.rendered.toLowerCase().startsWith(filter)) {
+        return true;
+      }
+    });
+
+    displayBlogPosts(filteredPost);
+  });
+}

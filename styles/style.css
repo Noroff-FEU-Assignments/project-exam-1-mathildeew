@@ -325,11 +325,11 @@ footer img {
   text-align: center;
 }
 
-.filter input::placeholder {
+/* .filter input::placeholder {
   color: var(--almost-black);
   font: 1.6rem var(--qua);
   background: var(--almost-white);
-}
+} */
 
 .filter input:focus,
 select:focus {

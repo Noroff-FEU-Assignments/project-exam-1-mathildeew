@@ -478,7 +478,7 @@ select:focus {
   height: 100vh;
   width: 100%;
   border-radius: 0 0 50% 50%;
-  top: -100%;
+  top: -130%;
   position: absolute;
   transition: top 1s ease-in-out;
   display: flex;

@@ -475,7 +475,7 @@ select:focus {
 .message-sent {
   background: var(--light-pink);
   text-align: center;
-  height: 100vh;
+  height: 130vh;
   width: 100%;
   border-radius: 0 0 50% 50%;
   top: -130%;

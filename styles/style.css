@@ -317,6 +317,7 @@ footer img {
 
 .filter input,
 .filter select {
+  color: var(--almost-black);
   font: 1.6rem var(--qua);
   background: var(--almost-white);
   width: 80%;

@@ -1,4 +1,6 @@
 export function contactForm() {
+  const footerLinks = document.querySelectorAll(".hover");
+
   const form = document.querySelector("#contact-form");
 
   const name = document.querySelector("#name");
@@ -68,7 +70,7 @@ export function contactForm() {
       body.style.overflow = "hidden";
       form.style.display = "none";
       sentMessage.classList.toggle("active");
-      // form.reset();
+      footerLinks.style.display = "none";
     }
   }
 }

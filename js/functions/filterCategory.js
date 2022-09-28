@@ -1,6 +1,18 @@
 import { displayBlogPosts } from "../blog.js";
 
-export function filterByCategory(blogPosts) {
+// Create list of categories in drop down
+
+export function filterByCategory(blogPosts, categories) {
+  // Create drop down menu of categories
+  const selectCategories = document.querySelector(".categories");
+
+  categories.slice(0, 4).forEach(function (categories) {
+    selectCategories.innerHTML += `
+                                      <option value="${categories.id}">${categories.name}</option>
+                                    `;
+  });
+
+  // Display blogposts in selected category
   const select = document.querySelector("select");
 
   select.addEventListener("change", () => {

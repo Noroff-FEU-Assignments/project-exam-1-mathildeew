@@ -67,7 +67,7 @@ header {
   z-index: 2;
 }
 
-header a {
+header .logo {
   font: 3rem var(--fbp);
   padding-left: 20px;
   margin: 0 0 0 5%;
@@ -100,6 +100,10 @@ header a {
 }
 
 nav {
+  display: none;
+}
+
+.nav-overlay {
   background: var(--light-pink);
   text-align: center;
   height: 117vh;
@@ -114,12 +118,12 @@ nav {
   align-items: center;
 }
 
-nav.active {
+.nav-overlay.active {
   top: 52px;
   z-index: 1;
 }
 
-nav li {
+.nav-overlay li {
   font: 6rem var(--fbp);
   text-transform: uppercase;
   padding: 5px;
@@ -213,7 +217,7 @@ footer img {
 }
 
 .carousel-btn {
-  display: none !important;
+  display: none;
 }
 
 .blog-btn {
@@ -578,26 +582,34 @@ textarea:focus {
     line-height: 1.8;
   }
 
-  nav.active,
+  nav {
+    display: flex;
+  }
+
+  nav a {
+    font-size: 3rem;
+    padding: 2px;
+    margin-left: 20px;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .nav-overlay.active,
   .message-sent.active {
     top: 85px;
   }
 
   header {
     height: 85px;
+    justify-content: space-evenly;
   }
 
-  header a {
+  header .logo {
     font-size: 5rem;
-  }
-
-  .menu-button {
-    top: 36px;
-  }
-
-  .menu-button span {
-    width: 60px;
-    height: 3px;
+    margin: 0;
+    padding: 0;
   }
 
   .footer-content {
@@ -625,7 +637,7 @@ textarea:focus {
   }
 
   .carousel-btn {
-    display: contents !important;
+    display: contents;
     width: 100%;
     align-items: center;
   }
@@ -762,28 +774,6 @@ textarea:focus {
 }
 
 @media (min-width: 1110px) {
-  header {
-    justify-content: center;
-  }
-
-  header a {
-    margin: 0;
-  }
-
-  .wrapper {
-    width: 1085px;
-    max-width: 1400px;
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .menu-button {
-    margin: 0;
-    top: 26px;
-    right: 64px;
-  }
-
   .carousel-btn button {
     transition: none;
   }

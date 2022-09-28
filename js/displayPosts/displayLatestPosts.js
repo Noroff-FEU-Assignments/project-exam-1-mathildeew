@@ -5,7 +5,7 @@ export function displayLatestPosts(blogPosts) {
   const slideThree = document.querySelector(".slide-three");
 
   for (let i = 0; i < blogPosts.length; i++) {
-    const date = new Date(blogPosts[0].date).toLocaleDateString("utc", {
+    const date = new Date(blogPosts[i].date).toLocaleDateString("utc", {
       year: "numeric",
       month: "long",
       day: "2-digit",

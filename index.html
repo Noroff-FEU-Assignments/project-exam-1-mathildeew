@@ -15,23 +15,26 @@
   </head>
   <body>
     <header>
-      <div class="wrapper">
-        <a href="index.html">Cerchio</a>
+      <a class="logo" href="index.html">Cerchio</a>
+      <nav>
+        <a class="hover" href="blog.html">Blog</a>
+        <a class="hover" href="about.html">About</a>
+        <a class="hover" href="contact.html">Contact</a>
+      </nav>
 
-        <div class="menu-button">
-          <span></span>
-          <span></span>
-        </div>
+      <div class="menu-button">
+        <span></span>
+        <span></span>
       </div>
     </header>
 
-    <nav>
+    <div class="nav-overlay">
       <ul>
         <li><a class="hover" href="blog.html">Blog</a></li>
         <li><a class="hover" href="about.html">About</a></li>
         <li><a class="hover" href="contact.html">Contact</a></li>
       </ul>
-    </nav>
+    </div>
 
     <main>
       <section class="latest-posts">
@@ -45,14 +48,7 @@
           <div class="blog-grid slide-three fade"></div>
         </div>
 
-        <div class="carousel-btn">
-          <button class="prev fade" aria-label="Previous blogpost">
-            <i class="fa-solid fa-angle-left"></i>
-          </button>
-          <button class="next fade" aria-label="Next blogpost">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
+        <div class="carousel-btn"></div>
 
         <div>
           <span class="dot dotone"></span>

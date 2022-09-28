@@ -17,13 +17,8 @@ async function getBlogPosts() {
     const categories = await (await fetch(baseUrl + "categories")).json();
     loader.style.display = "none";
 
-    displayBlogPosts(allBlogPosts);
-    createCategories(categories);
-    filterByCategory(allBlogPosts);
-    console.log(allBlogPosts);
-
-    // console.log(allBlogPosts);
-
+    displayBlogPosts(allBlogPosts, categories);
+    filterByCategory(allBlogPosts, categories);
     searchBlogPosts(allBlogPosts);
   } catch (error) {
     console.log(error);
@@ -33,9 +28,9 @@ async function getBlogPosts() {
 
 getBlogPosts();
 
-// Display blogposts 4 per page
+// Display blogposts per page
 let pageIndex = 0;
-let postsPerPage = 4;
+let postsPerPage = 10;
 const select = document.querySelector("select");
 
 export function displayBlogPosts(blogPosts) {
@@ -52,7 +47,7 @@ export function displayBlogPosts(blogPosts) {
       break;
     }
 
-    const date = new Date(blogPosts[0].date).toLocaleDateString("utc", {
+    const date = new Date(blogPosts[i].date).toLocaleDateString("utc", {
       year: "numeric",
       month: "long",
       day: "2-digit",
@@ -77,7 +72,7 @@ export function displayBlogPosts(blogPosts) {
 }
 
 // Navigation between blogposts 4 per page
-function loadBlogPostNav(blogPosts) {
+function loadBlogPostNav(blogPosts, categories) {
   const postsNav = document.querySelector(".blogposts-nav");
 
   postsNav.innerHTML = "";
@@ -91,15 +86,4 @@ function loadBlogPostNav(blogPosts) {
     });
     postsNav.append(span);
   }
-}
-
-// Create list of categories in drop down
-function createCategories(categories) {
-  const selectCategories = document.querySelector(".categories");
-
-  categories.slice(0, 4).forEach(function (categories) {
-    selectCategories.innerHTML += `
-                                      <option value="${categories.id}">${categories.name}</option>
-                                    `;
-  });
 }

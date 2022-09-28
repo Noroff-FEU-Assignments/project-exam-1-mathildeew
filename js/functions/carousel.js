@@ -5,14 +5,23 @@ export function carousel() {
   changeSlides(slideIndex);
 
   // Next/previous controls
-  const prevBtn = document.querySelector(".prev");
-  const nextBtn = document.querySelector(".next");
+  const carouselBtn = document.querySelector(".carousel-btn");
   const dotOne = document.querySelector(".dotone");
   const dotTwo = document.querySelector(".dottwo");
   const dotThree = document.querySelector(".dotthree");
 
+  const prevBtn = document.createElement("button");
+  prevBtn.classList.add("prev", "fade");
+  prevBtn.innerHTML = `<i class="fa-solid fa-angle-left"></i>`;
+  const nextBtn = document.createElement("button");
+  nextBtn.classList.add("next", "fade");
+  nextBtn.innerHTML = `<i class="fa-solid fa-chevron-right"></i>`;
+
+  carouselBtn.append(prevBtn, nextBtn);
+
   prevBtn.addEventListener("click", prevSlide);
   nextBtn.addEventListener("click", nextSlide);
+
   dotOne.addEventListener("click", () => {
     currentSlide(1);
   });

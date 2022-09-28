@@ -237,6 +237,7 @@ footer img {
 .semitext {
   display: flex;
   flex-direction: column;
+  margin: 30px 0;
 }
 
 .latest-posts {
@@ -582,6 +583,10 @@ textarea:focus {
     font-size: 4rem;
   }
 
+  .semitext {
+    margin: 50px 0;
+  }
+
   .filter {
     flex-direction: row;
     height: 40px;
@@ -661,6 +666,7 @@ textarea:focus {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    padding: 50px 0;
   }
 
   .semi-img {

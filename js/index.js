@@ -3,17 +3,22 @@ import { displayLatestPosts } from "./displayPosts/displayLatestPosts.js";
 import { carousel } from "./functions/carousel.js";
 
 const loader = document.querySelector(".loader");
+const carouselBtn = document.querySelector(".carousel-btn");
 
 const baseUrl = "https://projects.mathildeelinor.no/wp-json/wp/v2/posts";
 const latestPost = baseUrl + "?per_page=12&_embed";
 
 // Fetch & display latest 12 posts
+carouselBtn.style.display = "hidden";
+
 async function getLatestPosts() {
   try {
     const blogPosts = await (await fetch(latestPost)).json();
     loader.style.display = "none";
 
     displayLatestPosts(blogPosts);
+    carouselBtn.style.display = "contents";
+
     carousel();
   } catch (error) {
     console.log(error);

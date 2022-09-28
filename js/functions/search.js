@@ -8,7 +8,7 @@ export function searchBlogPosts(blogPosts) {
     const filter = event.target.value.trim().toLowerCase();
 
     const filteredPost = blogPosts.filter(function (blog) {
-      if (blog.title.rendered.toLowerCase().startsWith(filter)) {
+      if (blog.title.rendered.toLowerCase().includes(filter)) {
         return true;
       }
     });

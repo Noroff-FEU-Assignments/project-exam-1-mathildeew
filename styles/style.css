@@ -266,7 +266,7 @@ footer img {
   text-align: center;
   text-transform: uppercase;
   border-radius: 50px;
-  padding: 5px 25px;
+  padding: 11px 25px 5px;
   margin: 0 auto;
 }
 
@@ -566,20 +566,16 @@ textarea:focus {
 
 .contact button {
   color: var(--almost-black);
-  font: 1.8rem var(--qua);
-  text-transform: uppercase;
   background-color: var(--light-yellow);
-  padding: 8px 60px;
+  padding: 11px 40px 5px;
   border: 1px solid var(--almost-black);
-  border-radius: 50px;
-  margin: 10px auto 50px;
+  margin: 30px auto 50px;
   display: block;
-  cursor: pointer;
 }
 
 .form-error {
   display: none;
-  font-size: 1.6rem;
+  font: 1.6rem var(--qua);
   font-style: italic;
 }
 

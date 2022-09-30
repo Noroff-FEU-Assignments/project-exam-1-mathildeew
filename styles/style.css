@@ -543,7 +543,7 @@ textarea:focus {
 .contact button {
   color: var(--almost-black);
   background-color: var(--light-yellow);
-  padding: 11px 40px 5px;
+  padding: 11px 40px 9px;
   border: 1px solid var(--almost-black);
   margin: 30px auto 50px;
   display: block;

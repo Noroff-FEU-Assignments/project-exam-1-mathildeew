@@ -305,6 +305,10 @@ footer img {
   color: var(--almost-black);
 }
 
+.filter label {
+  display: none;
+}
+
 .filter input,
 .filter select {
   color: var(--almost-black);

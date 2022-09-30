@@ -339,6 +339,7 @@ footer img {
   border: 1px solid var(--almost-black);
   border-radius: 25px;
   text-align: center;
+  padding: 9px 0 7px;
 }
 
 .filter input:focus,
@@ -547,7 +548,7 @@ textarea {
   margin-bottom: 10px;
 }
 
-input {
+.form-container input {
   background-color: var(--light-yellow);
   height: 40px;
   margin-bottom: 20px;
@@ -592,14 +593,14 @@ textarea:focus {
   .filter {
     flex-direction: row;
     height: 40px;
-    align-items: center;
     justify-content: space-evenly;
   }
 
   .filter select,
   .filter input {
     width: 40%;
-    height: 30px;
+    /* height: 30px; */
+    /* padding: 0; */
   }
 
   .filter input {

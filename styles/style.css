@@ -237,11 +237,11 @@ footer img {
 }
 
 .btn {
-  font: 2rem var(--qua);
+  font: 1.8rem var(--qua);
   text-align: center;
   text-transform: uppercase;
   border-radius: 50px;
-  padding: 11px 25px 5px;
+  padding: 10px 25px 9px;
   margin: 0 auto;
 }
 

@@ -8,8 +8,6 @@ const loader = document.querySelector(".loader");
 const baseUrl = "https://cerchiostudio.mathildeelinor.no/wp-json/wp/v2/";
 const blogPostsUrl = "posts/?per_page=100&_embed";
 
-document.title += " | Blog";
-
 async function getBlogPosts() {
   try {
     const allBlogPosts = await (await fetch(baseUrl + blogPostsUrl)).json();

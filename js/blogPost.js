@@ -10,8 +10,6 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 const apiUrl = `https://cerchiostudio.mathildeelinor.no/wp-json/wp/v2/posts/${id}/?_embed`;
 
-document.title += " | Blog";
-
 async function getBlogPost() {
   try {
     const blogPost = await (await fetch(apiUrl)).json();

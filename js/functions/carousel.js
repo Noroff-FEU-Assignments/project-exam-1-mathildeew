@@ -12,9 +12,12 @@ export function carousel() {
 
   const prevBtn = document.createElement("button");
   prevBtn.classList.add("prev", "fade");
+  prevBtn.setAttribute("aria-label", "Previous");
   prevBtn.innerHTML = `<i class="fa-solid fa-angle-left"></i>`;
   const nextBtn = document.createElement("button");
   nextBtn.classList.add("next", "fade");
+  nextBtn.setAttribute("aria-label", "Next");
+
   nextBtn.innerHTML = `<i class="fa-solid fa-chevron-right"></i>`;
 
   carouselBtn.append(prevBtn, nextBtn);

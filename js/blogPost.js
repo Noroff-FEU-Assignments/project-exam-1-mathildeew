@@ -4,20 +4,19 @@ import { biggerImage } from "./functions/imgModal.js";
 const loader = document.querySelector(".loader");
 const blogPostContent = document.querySelector(".content");
 
+// Get specific blogpost
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-const apiUrl =
-  "https://cerchiostudio.mathildeelinor.no/wp-json/wp/v2/posts/" +
-  id +
-  "/?_embed";
+const apiUrl = `https://cerchiostudio.mathildeelinor.no/wp-json/wp/v2/posts/${id}/?_embed`;
 
-// Get specific blogpost
-document.title += " Blog";
+document.title += " | Blog";
+
 async function getBlogPost() {
   try {
     const blogPost = await (await fetch(apiUrl)).json();
     loader.style.display = "none";
+    document.title += `: ${blogPost.title.rendered}`;
 
     displayBlogPost(blogPost);
     biggerImage();
@@ -30,8 +29,6 @@ getBlogPost();
 
 // Display blogpost
 function displayBlogPost(blogPost) {
-  document.title += ` | ${blogPost.title.rendered}`;
-
   // Convert date
   const date = new Date(blogPost.date).toLocaleDateString("utc", {
     year: "numeric",
@@ -48,6 +45,3 @@ function displayBlogPost(blogPost) {
                                       </div>
                                       `;
 }
-
-// Show bigger image & close bigger image
-biggerImage();

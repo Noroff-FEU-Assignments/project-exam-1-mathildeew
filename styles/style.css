@@ -45,23 +45,23 @@ p {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--almost-black);
 }
 
 ul {
   list-style-type: none;
 }
 
-/* HEADER & NAVIGATION
+/* HEADER & NAVIGATION & LOADER
 ------------------------- */
 header {
+  width: 100%;
+  height: 52px;
   background: var(--almost-white);
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 0 auto;
-  height: 52px;
-  width: 100%;
   position: sticky;
   z-index: 2;
 }
@@ -82,9 +82,9 @@ header .logo {
 }
 
 .menu-button span {
+  background: black;
   width: 25px;
   height: 2px;
-  background: black;
   display: block;
   margin-bottom: 6px;
   transition: transform 0.6s cubic-bezier(0.4, 0, 1, 1);
@@ -103,18 +103,17 @@ nav {
 }
 
 .nav-overlay {
-  background: var(--almost-white);
   text-align: center;
-  height: 117vh;
+  background: var(--almost-white);
   width: 100%;
-  border-radius: 0 0 100% 100% / 0 0 50% 50%;
-  top: -117vh;
-  position: absolute;
-  transition: top 0.6s ease-in-out;
+  height: 117vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
+  border-radius: 0 0 100% 100% / 0 0 50% 50%;
+  position: absolute;
+  top: -117vh;
+  transition: top 0.6s ease-in-out;
 }
 
 .nav-overlay.active {
@@ -126,15 +125,14 @@ nav {
   font: 4rem var(--fbp);
   text-transform: uppercase;
   padding: 5px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 40px auto 20px;
 }
 
 .hover {
   transition: text-decoration 0.3s;
 }
 .hover:hover {
-  text-decoration: underline;
+  text-decoration: 2px underline;
 }
 
 .loader {
@@ -154,17 +152,34 @@ nav {
   }
 }
 
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* FOOTER
 ------------------------- */
 footer {
   background: var(--light-pink);
-  height: 270px;
   width: 100%;
+
+  height: 270px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
 }
+
 footer img {
   width: 110px;
   height: auto;
@@ -187,6 +202,12 @@ footer img {
   margin: 0 5% 16px;
 }
 
+.semitext {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
+
 .semi-img {
   width: auto;
   height: 330px;
@@ -204,15 +225,9 @@ footer img {
 }
 
 .simg2 {
-  background: url(/images/manki-kim-ZOeyUJB6t_Y-unsplash-1100.jpg) right/cover
+  background: url(/images/manki-kim-ZOeyUJB6t_Y-unsplash-1100.jpg) center/cover
     no-repeat;
   border-radius: 276% 0 0 0;
-}
-
-.semitext {
-  display: flex;
-  flex-direction: column;
-  margin: 30px 0;
 }
 
 .latest-posts {
@@ -317,31 +332,31 @@ footer img {
 .filter select {
   color: var(--almost-black);
   font: 1.6rem var(--qua);
+  text-align: center;
   background: var(--almost-white);
   width: 80%;
   border: 1px solid var(--almost-black);
   border-radius: 25px;
-  text-align: center;
   padding: 9px 0 7px;
 }
 
 .filter input:focus,
 select:focus {
+  background-color: var(--almost-white);
   border: 1px solid var(--almost-black);
   box-shadow: none;
   outline: none;
-  background-color: var(--almost-white);
 }
 
 .blog span {
+  text-align: center;
+  background-color: var(--light-green);
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  background-color: var(--light-green);
   cursor: pointer;
 }
 
@@ -368,9 +383,9 @@ select:focus {
 }
 
 .img-modal {
+  background-color: var(--almost-white);
   width: 100%;
   height: 100%;
-  background-color: var(--almost-white);
   display: none;
   flex-direction: column;
   align-items: center;
@@ -382,14 +397,14 @@ select:focus {
 
 .img-modal img {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   height: auto;
   margin-bottom: 20px;
 }
 
-.img-modal button {
-  font-size: 1.6rem;
+.img-modal p {
   color: grey;
+  font-size: 1.6rem;
   background: none;
   border: none;
   cursor: pointer;
@@ -401,24 +416,16 @@ select:focus {
   right: 15px;
 }
 
-.img-modal span {
-  width: 25px;
-  height: 2px;
-  background: black;
-  display: block;
-  margin-bottom: 6px;
-}
-
-.img-modal span:nth-child(1) {
-  transform: rotate(45deg);
-}
-
-.img-modal span:nth-child(2) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
-/*  GLOBAL LAYOUT
+/*  LAYOUT FOR ABOUT, CONTACT BLOGPOST
 -------------------------  */
+.about {
+  background: var(--light-blue);
+}
+
+.blogpost {
+  background: var(--light-green);
+}
+
 .sizing {
   display: flex;
   flex-direction: column;
@@ -436,7 +443,6 @@ select:focus {
 .wp-content img {
   width: 100%;
   height: auto;
-  /* max-height: 540px; */
   object-fit: cover;
   margin-bottom: 10px;
 }
@@ -450,20 +456,10 @@ select:focus {
   margin-bottom: 10px;
 }
 
-/*  ABOUT
--------------------------  */
-.about {
-  background: var(--light-blue);
-}
-
 /*  CONTACT
 -------------------------  */
 .contact {
   background: var(--light-yellow);
-}
-
-.blogpost {
-  background: var(--light-green);
 }
 
 .contact-info1,
@@ -472,28 +468,27 @@ select:focus {
 }
 
 .message-sent {
-  background: var(--light-pink);
   text-align: center;
+  background: var(--light-pink);
   height: 100vh;
   width: 100%;
-  border-radius: 0 0 50% 50%;
-  top: -130%;
-  position: absolute;
-  transition: top 1s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+  top: -130%;
+  transition: top 1s ease-in-out;
 }
 
 .message-sent.active {
-  top: 0;
   height: 130vh;
+  top: 0;
 }
 
 .message-sent img {
   width: 162px;
-  margin-top: 55px;
-  margin-bottom: 40px;
+  margin: 180px auto 40px;
 }
 
 .message-sent p {
@@ -507,23 +502,23 @@ select:focus {
 
 .form-container {
   font: 1.8rem var(--qua);
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
 label,
 input,
 textarea {
-  display: block;
   font-size: 2rem;
+  display: block;
 }
 
 input,
 textarea {
   background: var(--light-yellow);
-  border: 1px solid var(--almost-black);
   width: 100%;
+  border: 1px solid var(--almost-black);
 }
 
 label,
@@ -551,17 +546,17 @@ textarea:focus {
 .contact button {
   color: var(--almost-black);
   background-color: var(--light-yellow);
-  padding: 11px 40px 9px;
-  border: 1px solid var(--almost-black);
-  margin: 30px auto 50px;
   display: block;
+  padding: 11px 40px 9px;
+  margin: 30px auto 50px;
+  border: 1px solid var(--almost-black);
 }
 
 .form-error {
-  display: none;
   color: rgb(255, 0, 0);
   font: 1.6rem var(--qua);
   font-style: italic;
+  display: none;
 }
 
 /* MEDIA QUERIES */
@@ -575,16 +570,14 @@ textarea:focus {
   }
 
   .filter {
-    flex-direction: row;
     height: 40px;
+    flex-direction: row;
     justify-content: space-evenly;
   }
 
   .filter select,
   .filter input {
     width: 40%;
-    /* height: 30px; */
-    /* padding: 0; */
   }
 
   .filter input {
@@ -594,15 +587,18 @@ textarea:focus {
 
 @media (min-width: 850px) {
   .gactive {
-    text-decoration: underline var(--light-green);
+    font-style: italic;
+    text-decoration: 2px underline var(--light-green);
   }
 
   .bactive {
-    text-decoration: underline var(--light-blue);
+    font-style: italic;
+    text-decoration: 2px underline var(--light-blue);
   }
 
   .yactive {
-    text-decoration: underline var(--light-yellow);
+    font-style: italic;
+    text-decoration: 2px underline var(--light-yellow);
   }
 
   p {
@@ -646,8 +642,8 @@ textarea:focus {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
     padding: 50px 0;
+    margin: 0 auto;
   }
 
   .semi-img {
@@ -689,19 +685,19 @@ textarea:focus {
   }
 
   .carousel-btn button {
+    color: var(--almost-black);
     font-size: 3rem;
+    text-align: center;
     background-color: rgba(197, 227, 216, 60%);
-    cursor: pointer;
-    position: absolute;
-    top: 1098px;
     width: 80px;
     height: 80px;
     padding: 1px 12px;
-    color: var(--almost-black);
-    transition: 0.6s ease;
-    border-radius: 100%;
-    text-align: center;
     border: none;
+    border-radius: 100%;
+    position: absolute;
+    top: 1098px;
+    cursor: pointer;
+    transition: 0.6s ease;
   }
 
   .next {
@@ -717,35 +713,20 @@ textarea:focus {
   }
 
   .dot {
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 0 2px;
     background-color: grey;
+    width: 12px;
+    height: 12px;
+    margin: 0 2px;
     border-radius: 50%;
     display: inline-block;
+    cursor: pointer;
     transition: background-color 0.6s ease;
   }
 
   .dotactive {
+    background-color: var(--light-green);
     height: 15px;
     width: 15px;
-    background-color: var(--light-green);
-  }
-
-  /* Fading animation */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-
-  @keyframes fade {
-    from {
-      opacity: 0.4;
-    }
-    to {
-      opacity: 1;
-    }
   }
 
   .blog-grid {

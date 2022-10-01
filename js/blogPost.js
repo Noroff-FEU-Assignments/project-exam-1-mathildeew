@@ -8,7 +8,9 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 const apiUrl =
-  "https://projects.mathildeelinor.no/wp-json/wp/v2/posts/" + id + "/?_embed";
+  "https://cerchiostudio.mathildeelinor.no/wp-json/wp/v2/posts/" +
+  id +
+  "/?_embed";
 
 // Get specific blogpost
 document.title += " Blog";

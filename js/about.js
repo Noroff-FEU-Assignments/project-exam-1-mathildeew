@@ -2,7 +2,7 @@ import { errorMessage } from "./functions/errorMessage.js";
 
 const aboutContainer = document.querySelector(".content");
 const loader = document.querySelector(".loader");
-const apiUrl = "https://projects.mathildeelinor.no/wp-json/wp/v2/pages/88";
+const apiUrl = "https://cerchiostudio.mathildeelinor.no/wp-json/wp/v2/pages/88";
 
 // Get about page and display
 document.title += " | About";

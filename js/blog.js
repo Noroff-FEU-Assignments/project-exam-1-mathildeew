@@ -6,7 +6,7 @@ import { searchBlogPosts } from "./functions/search.js";
 // Get all blogpost, navigation between postsperpage, filter & search
 const loader = document.querySelector(".loader");
 
-const baseUrl = "https://projects.mathildeelinor.no/wp-json/wp/v2/";
+const baseUrl = "https://cerchiostudio.mathildeelinor.no/wp-json/wp/v2/";
 const blogPostsUrl = "posts/?per_page=100&_embed";
 
 document.title += " | Blog";

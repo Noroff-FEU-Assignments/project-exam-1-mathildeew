@@ -1,5 +1,4 @@
 import { errorMessage } from "./functions/errorMessage.js";
-// import { displayBlogPosts } from "./displayPosts/displayBlogPosts.js";
 import { filterByCategory } from "./functions/filterCategory.js";
 import { searchBlogPosts } from "./functions/search.js";
 
@@ -21,7 +20,6 @@ async function getBlogPosts() {
     filterByCategory(allBlogPosts, categories);
     searchBlogPosts(allBlogPosts);
   } catch (error) {
-    console.log(error);
     errorMessage();
   }
 }
@@ -71,8 +69,8 @@ export function displayBlogPosts(blogPosts) {
   }
 }
 
-// Navigation between blogposts 4 per page
-function loadBlogPostNav(blogPosts, categories) {
+// Navigation between blogposts per page
+function loadBlogPostNav(blogPosts) {
   const postsNav = document.querySelector(".blogposts-nav");
 
   postsNav.innerHTML = "";

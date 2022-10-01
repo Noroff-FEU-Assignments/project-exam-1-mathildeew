@@ -17,7 +17,6 @@ async function displayAboutContent() {
                                   </div>
                                 `;
   } catch (error) {
-    console.log(error);
     errorMessage();
   }
 }

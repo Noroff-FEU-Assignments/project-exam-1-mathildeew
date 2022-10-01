@@ -17,12 +17,11 @@ document.title += " Blog";
 async function getBlogPost() {
   try {
     const blogPost = await (await fetch(apiUrl)).json();
-
     loader.style.display = "none";
+
     displayBlogPost(blogPost);
     biggerImage();
   } catch (error) {
-    console.log(error);
     errorMessage();
   }
 }

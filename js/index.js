@@ -28,12 +28,14 @@ function displayLatestPosts(blogPosts) {
   const slideThree = document.querySelector(".slide-three");
 
   for (let i = 0; i < blogPosts.length; i++) {
+    // Convert date
     const date = new Date(blogPosts[i].date).toLocaleDateString("utc", {
       year: "numeric",
       month: "long",
       day: "2-digit",
     });
 
+    // Show 4 blogposts in the three slides
     if (i <= 3) {
       slideOne.innerHTML += `
                               <a href="blogpost.html?id=${blogPosts[i].id}">

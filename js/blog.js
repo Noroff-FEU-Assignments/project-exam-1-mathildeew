@@ -52,14 +52,14 @@ export function displayBlogPosts(blogPosts) {
     const blogPostContent = document.createElement("div");
     blogPostContent.classList.add("blog-grid-posts", "fade");
     blogPostContent.innerHTML = `
-                                <a href="blogpost.html?id=${blogPosts[i].id}">
-                                <div class="post-card" style="background-image: url('${blogPosts[i]._embedded["wp:featuredmedia"]["0"].source_url}')">
-                                  <div class="pc-background">
-                                    <h2>${blogPosts[i].title.rendered}</h2>
-                                    <h3>${date}</h3>
-                                  </div>
-                                </div>
-                                </a>
+                                  <a href="blogpost.html?id=${blogPosts[i].id}">
+                                    <div class="post-card" style="background-image: url('${blogPosts[i]._embedded["wp:featuredmedia"]["0"].source_url}')">
+                                      <div class="pc-background">
+                                        <h2>${blogPosts[i].title.rendered}</h2>
+                                        <h3>${date}</h3>
+                                      </div>
+                                    </div>
+                                  </a>
                                 `;
 
     blogPostContainer.append(blogPostContent);

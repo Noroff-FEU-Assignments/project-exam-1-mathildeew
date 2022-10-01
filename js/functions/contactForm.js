@@ -17,6 +17,7 @@ export function contactForm() {
 
   const sentMessage = document.querySelector(".message-sent");
 
+  // Validate all the inputs
   function validateForm() {
     event.preventDefault();
 
@@ -45,6 +46,7 @@ export function contactForm() {
 
   form.addEventListener("submit", validateForm);
 
+  // Check if lenght of inputs are valid
   function checkLength(value, len) {
     if (value.trim().length > len) {
       return true;
@@ -53,12 +55,14 @@ export function contactForm() {
     }
   }
 
+  // Check if it is a valid email
   function validateEmail(email) {
     const regEx = /\S+@\S+\.\S+/;
     const patternMatches = regEx.test(email);
     return patternMatches;
   }
 
+  // Send form if all the inputs are valid and show sent message if success
   function sendForm(event) {
     if (
       checkLength(name.value, 4) === true &&

@@ -136,8 +136,12 @@ nav {
   background: url(/images/loader.png) center/cover no-repeat;
   width: 100px;
   height: 100px;
-  margin: 0 auto;
+  margin: 100px auto;
   animation: spin 3s linear infinite;
+}
+
+.error-message {
+  margin: 100px auto;
 }
 
 @keyframes spin {
@@ -365,6 +369,11 @@ select:focus {
 
 /*  BLOG SPECIFIC
 -------------------------  */
+.blogpost {
+  background: var(--light-green);
+  min-height: 60vh;
+}
+
 .blogpost h1 {
   font-size: 2.5rem;
   padding: 30px 0 0 0;
@@ -417,10 +426,6 @@ select:focus {
 -------------------------  */
 .about {
   background: var(--light-blue);
-}
-
-.blogpost {
-  background: var(--light-green);
 }
 
 .sizing {

@@ -23,6 +23,10 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background-color: var(--almost-white);
+}
+
 h1 {
   font: 6rem var(--fbp);
   text-transform: uppercase;
@@ -297,6 +301,7 @@ footer img {
 }
 
 .blog-content {
+  /* background: var(--almost-white); */
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;

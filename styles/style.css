@@ -457,6 +457,7 @@ select:focus {
 -------------------------  */
 .contact {
   background: var(--light-yellow);
+  min-height: 100vh;
 }
 
 .contact-info1,
@@ -466,7 +467,7 @@ select:focus {
 
 .message-sent {
   text-align: center;
-  background: var(--light-pink);
+  background: var(--almost-white);
   height: 100vh;
   width: 100%;
   display: flex;

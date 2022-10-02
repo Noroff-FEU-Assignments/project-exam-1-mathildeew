@@ -140,10 +140,6 @@ nav {
   animation: spin 3s linear infinite;
 }
 
-.error-message {
-  margin: 100px auto;
-}
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);

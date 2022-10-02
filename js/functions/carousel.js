@@ -39,16 +39,13 @@ export function carousel() {
 
   carouselBtn.append(prevBtn, nextBtn);
 
-  prevBtn.addEventListener("click", prevSlide);
-  nextBtn.addEventListener("click", nextSlide);
-
-  function prevSlide() {
+  prevBtn.addEventListener("click", () => {
     changeSlides((slideIndex += -1));
-  }
+  });
 
-  function nextSlide() {
+  nextBtn.addEventListener("click", () => {
     changeSlides((slideIndex += 1));
-  }
+  });
 
   // To get the dots work as controls
   const dotOne = document.querySelector(".dotone");
